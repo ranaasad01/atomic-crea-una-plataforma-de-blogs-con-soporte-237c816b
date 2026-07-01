@@ -9,15 +9,15 @@ import { fadeInUp, staggerContainer } from "@/lib/motion";
 
 const footerSections = [
   {
-    title: "Navegación",
+    title: "Navigation",
     links: navLinks,
   },
   {
-    title: "Recursos",
+    title: "Resources",
     links: [
-      { label: "Guía de Markdown", href: "#editor" },
-      { label: "Atajos de teclado", href: "#editor" },
-      { label: "Exportar artículos", href: "#editor" },
+      { label: "Markdown Guide", href: "#editor" },
+      { label: "Keyboard shortcuts", href: "#editor" },
+      { label: "Export articles", href: "#editor" },
     ],
   },
 ];
@@ -25,7 +25,7 @@ const footerSections = [
 const socialLinks = [
   { icon: Github, label: "GitHub", href: "#" },
   { icon: Twitter, label: "Twitter", href: "#" },
-  { icon: Mail, label: "Contacto", href: "#" },
+  { icon: Mail, label: "Contact", href: "#" },
 ];
 
 export default function Footer() {
@@ -79,8 +79,7 @@ export default function Footer() {
               {APP_TAGLINE}
             </p>
             <p className="mt-3 text-sm text-white/40 leading-relaxed max-w-xs">
-              Una plataforma editorial para escritores que valoran la claridad y
-              el buen diseño.
+              An editorial platform for writers who value clarity and great design.
             </p>
 
             {/* Social links */}
@@ -112,7 +111,7 @@ export default function Footer() {
                     <Link
                       href={getHref(link.href)}
                       onClick={(e) => handleAnchorClick(e, link.href)}
-                      className="text-sm text-white/55 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6c63ff] rounded"
+                      className="text-sm text-white/50 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6c63ff] rounded"
                     >
                       {link.label}
                     </Link>
@@ -124,12 +123,12 @@ export default function Footer() {
         </motion.div>
 
         {/* Bottom bar */}
-        <div className="py-5 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="border-t border-white/8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-white/30">
-            &copy; 2024 {APP_NAME}. Hecho con dedicación para escritores.
+            &copy; {new Date().getFullYear()} {APP_NAME}. All rights reserved.
           </p>
           <p className="text-xs text-white/20">
-            Construido con Next.js, TypeScript y Markdown
+            Built with Next.js &amp; Markdown
           </p>
         </div>
       </div>

@@ -22,10 +22,10 @@ import { Edit, ArrowRight, Star, Clock, Eye, Check, FileText, Sparkles, Code2 as
 // ─── Inline mock data ────────────────────────────────────────────────────────
 
 const TAGS = [
-  { id: "t1", name: "Tecnología", slug: "tecnologia", color: "#6c63ff" },
-  { id: "t2", name: "Diseño", slug: "diseno", color: "#f59e0b" },
-  { id: "t3", name: "Escritura", slug: "escritura", color: "#10b981" },
-  { id: "t4", name: "Productividad", slug: "productividad", color: "#ef4444" },
+  { id: "t1", name: "Technology", slug: "technology", color: "#6c63ff" },
+  { id: "t2", name: "Design", slug: "design", color: "#f59e0b" },
+  { id: "t3", name: "Writing", slug: "writing", color: "#10b981" },
+  { id: "t4", name: "Productivity", slug: "productivity", color: "#ef4444" },
   { id: "t5", name: "Open Source", slug: "open-source", color: "#3b82f6" },
   { id: "t6", name: "Markdown", slug: "markdown", color: "#8b5cf6" },
 ];
@@ -33,13 +33,13 @@ const TAGS = [
 const ARTICLES = [
   {
     id: "a1",
-    title: "Por qué Markdown sigue siendo el formato de escritura más poderoso",
-    slug: "markdown-formato-poderoso",
+    title: "Why Markdown remains the most powerful writing format",
+    slug: "markdown-most-powerful-format",
     excerpt:
-      "Desde documentación técnica hasta novelas, Markdown ha demostrado ser el lenguaje de marcado más versátil y duradero de la era digital.",
-    author: "Sofía Ramírez",
+      "From technical documentation to novels, Markdown has proven to be the most versatile and enduring markup language of the digital age.",
+    author: "Sofia Ramirez",
     authorAvatar: "/images/author-sofia-ramirez.jpg",
-    publishedAt: "12 jun 2025",
+    publishedAt: "Jun 12, 2025",
     readingTime: 6,
     views: 4820,
     tags: [TAGS[5], TAGS[2]],
@@ -48,13 +48,13 @@ const ARTICLES = [
   },
   {
     id: "a2",
-    title: "Diseño tipográfico para blogs: guía completa",
-    slug: "diseno-tipografico-blogs",
+    title: "Typographic design for blogs: a complete guide",
+    slug: "typographic-design-blogs",
     excerpt:
-      "La tipografía es la voz silenciosa de tu contenido. Aprende a elegir fuentes, escala y espaciado para que tus lectores nunca quieran irse.",
+      "Typography is the silent voice of your content. Learn to choose fonts, scale and spacing so your readers never want to leave.",
     author: "Carlos Mendoza",
     authorAvatar: "/images/author-carlos-mendoza.jpg",
-    publishedAt: "8 jun 2025",
+    publishedAt: "Jun 8, 2025",
     readingTime: 9,
     views: 3210,
     tags: [TAGS[1], TAGS[2]],
@@ -63,13 +63,13 @@ const ARTICLES = [
   },
   {
     id: "a3",
-    title: "Cómo construir un sistema de escritura sostenible",
-    slug: "sistema-escritura-sostenible",
+    title: "How to build a sustainable writing system",
+    slug: "sustainable-writing-system",
     excerpt:
-      "Escribir con consistencia no es cuestión de disciplina ciega, sino de crear un entorno y rutinas que hagan fluir las ideas de forma natural.",
-    author: "Lucía Torres",
+      "Writing consistently is not about blind discipline, but about creating an environment and routines that let ideas flow naturally.",
+    author: "Lucia Torres",
     authorAvatar: "/images/author-lucia-torres.jpg",
-    publishedAt: "3 jun 2025",
+    publishedAt: "Jun 3, 2025",
     readingTime: 7,
     views: 2890,
     tags: [TAGS[2], TAGS[3]],
@@ -78,17 +78,47 @@ const ARTICLES = [
   },
   {
     id: "a4",
-    title: "Open Source y documentación: el dúo perfecto",
-    slug: "open-source-documentacion",
+    title: "Open Source and documentation: the perfect duo",
+    slug: "open-source-documentation",
     excerpt:
-      "Los proyectos open source que triunfan tienen algo en común: documentación clara, accesible y bien mantenida. Aquí te mostramos cómo lograrlo.",
-    author: "Andrés Vega",
+      "Open source projects that succeed have one thing in common: clear, accessible and well-maintained documentation. Here we show you how to achieve it.",
+    author: "Andres Vega",
     authorAvatar: "/images/author-andres-vega.jpg",
-    publishedAt: "28 may 2025",
+    publishedAt: "May 28, 2025",
     readingTime: 5,
     views: 1970,
     tags: [TAGS[4], TAGS[5]],
     coverImage: "/images/open-source-documentation.jpg",
+    featured: false,
+  },
+  {
+    id: "a5",
+    title: "Productivity for writers: tools that actually work",
+    slug: "productivity-tools-writers",
+    excerpt:
+      "Between notifications, meetings and mental blocks, finding focus is an art. We review the tools and techniques that real writers use.",
+    author: "Maria Jimenez",
+    authorAvatar: "/images/author-maria-jimenez.jpg",
+    publishedAt: "May 22, 2025",
+    readingTime: 8,
+    views: 2340,
+    tags: [TAGS[3], TAGS[2]],
+    coverImage: "/images/productivity-writers.jpg",
+    featured: false,
+  },
+  {
+    id: "a6",
+    title: "The future of digital publishing",
+    slug: "future-digital-publishing",
+    excerpt:
+      "Newsletters, micro-blogs, long-form content: the publishing landscape is changing. Where are we headed and how can writers adapt?",
+    author: "Sofia Ramirez",
+    authorAvatar: "/images/author-sofia-ramirez.jpg",
+    publishedAt: "May 15, 2025",
+    readingTime: 6,
+    views: 3100,
+    tags: [TAGS[0], TAGS[2]],
+    coverImage: "/images/future-digital-publishing.jpg",
     featured: false,
   },
 ];
@@ -96,127 +126,68 @@ const ARTICLES = [
 const FEATURES = [
   {
     icon: FileText,
-    title: "Editor Markdown en vivo",
+    title: "Live Markdown Editor",
     description:
-      "Escribe en Markdown y ve el resultado renderizado en tiempo real. Soporte completo para GFM, tablas, bloques de código y más.",
+      "Write in Markdown and see the rendered result in real time. Full support for GFM, tables, code blocks and more.",
     accent: "#6c63ff",
   },
   {
     icon: Sparkles,
-    title: "Resaltado de sintaxis",
+    title: "Syntax Highlighting",
     description:
-      "Bloques de código con coloreado automático para más de 40 lenguajes de programación. Tu código siempre lucirá profesional.",
+      "Code blocks with automatic coloring for over 40 programming languages. Your code will always look professional.",
     accent: "#8b5cf6",
   },
   {
     icon: Eye,
-    title: "Vista previa instantánea",
+    title: "Instant Preview",
     description:
-      "Alterna entre modo edición y vista previa con un solo clic. Lo que ves es exactamente lo que publicarás.",
+      "Toggle between edit mode and preview with a single click. What you see is exactly what you will publish.",
     accent: "#6c63ff",
   },
   {
     icon: Search,
-    title: "Búsqueda inteligente",
+    title: "Smart Search",
     description:
-      "Encuentra cualquier artículo por título, etiqueta o contenido. El motor de búsqueda indexa todo tu contenido al instante.",
+      "Find any article by title, content or tag in milliseconds. Full-text search that actually works.",
     accent: "#8b5cf6",
   },
-  {
-    icon: Heart,
-    title: "Lectura sin distracciones",
-    description:
-      "Tipografía cuidada, espaciado generoso y modo oscuro incluido. Tus lectores disfrutarán cada párrafo.",
-    accent: "#6c63ff",
-  },
-  {
-    icon: Github,
-    title: "Exportación flexible",
-    description:
-      "Exporta tus artículos como Markdown puro, HTML o PDF. Tu contenido siempre será tuyo, en el formato que necesites.",
-    accent: "#8b5cf6",
-  },
-];
-
-const TESTIMONIALS = [
-  {
-    id: "r1",
-    quote:
-      "BlogMD cambió por completo mi flujo de escritura. El editor es tan limpio que me olvido de la herramienta y me concentro en las ideas.",
-    author: "Elena Fuentes",
-    role: "Escritora técnica en Stripe",
-    avatar: "https://researcherprofiles.org/profile/Modules/CustomViewPersonGeneralInfo/PhotoHandler.ashx?NodeID=186650",
-    stars: 5,
-  },
-  {
-    id: "r2",
-    quote:
-      "Llevaba años buscando una plataforma que respetara el Markdown sin añadir capas innecesarias. BlogMD es exactamente eso.",
-    author: "Marcos Ibáñez",
-    role: "Desarrollador y blogger",
-    avatar: "https://www.rochester.edu/college/ugresearch/about/ambassadors/images-2526/ibanez-marcos.jpg",
-    stars: 5,
-  },
-  {
-    id: "r3",
-    quote:
-      "La vista previa en tiempo real y el resaltado de código son increíbles. Mis artículos de programación nunca habían lucido tan bien.",
-    author: "Valentina Cruz",
-    role: "Ingeniería de software en Vercel",
-    avatar: "https://i.ytimg.com/vi/q30dKlPjbHo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAwlgMeAqQ-vB8oqzY1gSN_AlSANg",
-    stars: 5,
-  },
-];
-
-const MARKDOWN_DEMO = `# Bienvenido a BlogMD
-
-Escribe con **Markdown** y publica con estilo.
-
-## Características principales
-
-- Editor en tiempo real
-- Resaltado de sintaxis
-- Exportación flexible
-
-\`\`\`typescript
-const post = {
-  title: "Mi primer artículo",
-  tags: ["markdown", "blog"],
-  published: true,
-};
-\`\`\`
-
-> "La claridad es la cortesía del escritor."
-> — Ortega y Gasset`;
-
-const RENDERED_DEMO = [
-  { type: "h1", text: "Bienvenido a BlogMD" },
-  { type: "p", text: "Escribe con Markdown y publica con estilo." },
-  { type: "h2", text: "Características principales" },
-  { type: "li", items: ["Editor en tiempo real", "Resaltado de sintaxis", "Exportación flexible"] },
-  { type: "code", lang: "typescript", lines: [
-    'const post = {',
-    '  title: "Mi primer artículo",',
-    '  tags: ["markdown", "blog"],',
-    '  published: true,',
-    '};',
-  ]},
-  { type: "blockquote", text: '"La claridad es la cortesía del escritor." — Ortega y Gasset' },
 ];
 
 const STATS = [
-  { value: "12 000+", label: "Artículos publicados" },
-  { value: "3 400+", label: "Escritores activos" },
-  { value: "98%", label: "Satisfacción de usuarios" },
-  { value: "40+", label: "Lenguajes de código" },
+  { value: "12K+", label: "Published articles", description: "Growing every day" },
+  { value: "340+", label: "Active writers", description: "From around the world" },
+  { value: "98%", label: "Satisfaction", description: "According to our surveys" },
+  { value: "4.9", label: "Average rating", description: "On app stores" },
 ];
+
+const SAMPLE_MARKDOWN = `# My first article
+
+Welcome to **BlogMD**, the editorial platform that puts writing first.
+
+## Why Markdown?
+
+Markdown lets you focus on what matters: *your ideas*.
+
+\`\`\`javascript
+const hello = () => {
+  console.log('Hello, BlogMD!');
+};
+\`\`\`
+
+> Writing is thinking. To write well is to think clearly.
+
+- Simple and clean syntax
+- Renders beautifully
+- Works everywhere
+`;
 
 // ─── Sub-components ──────────────────────────────────────────────────────────
 
-function TagPill({ tag }: { tag: typeof TAGS[0] }) {
+function TagBadge({ tag }: { tag: (typeof TAGS)[0] }) {
   return (
     <span
-      className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
+      className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium"
       style={{ backgroundColor: tag.color + "18", color: tag.color }}
     >
       {tag.name}
@@ -224,363 +195,414 @@ function TagPill({ tag }: { tag: typeof TAGS[0] }) {
   );
 }
 
-function ArticleCard({ article, index }: { article: typeof ARTICLES[0]; index: number }) {
+function ArticleCard({
+  article,
+  index = 0,
+}: {
+  article: (typeof ARTICLES)[0];
+  index?: number;
+}) {
   const shouldReduce = useReducedMotion();
   return (
     <motion.article
       variants={fadeInUp}
-      whileHover={shouldReduce ? {} : { y: -4 }}
-      transition={{ duration: 0.25 }}
-      className="group bg-white rounded-2xl overflow-hidden border border-black/5 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_8px_rgba(0,0,0,0.06),0_16px_40px_-12px_rgba(108,99,255,0.18)] transition-all duration-300"
+      className="group bg-white rounded-2xl overflow-hidden border border-black/5 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.10)] transition-all duration-300 flex flex-col"
     >
-      <div className="relative overflow-hidden aspect-[16/9]">
-        <img
-          src={article.coverImage}
-          alt={article.title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-        <div className="absolute top-3 left-3 flex gap-1.5 flex-wrap">
-          {(article.tags ?? []).slice(0, 2).map((tag) => (
-            <TagPill key={tag.id} tag={tag} />
+      {/* Cover */}
+      <div className="relative h-48 bg-gradient-to-br from-[#e2e8f0] to-[#ede9fe] overflow-hidden">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div
+            className="w-16 h-16 rounded-2xl flex items-center justify-center"
+            style={{ backgroundColor: ACCENT_COLOR + "20" }}
+          >
+            <FileText size={28} style={{ color: ACCENT_COLOR }} />
+          </div>
+        </div>
+        {article.featured && (
+          <div className="absolute top-3 left-3">
+            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-[#6c63ff] text-white shadow-sm">
+              <Star size={10} fill="currentColor" />
+              Featured
+            </span>
+          </div>
+        )}
+      </div>
+
+      {/* Content */}
+      <div className="p-5 flex flex-col flex-1">
+        {/* Tags */}
+        <div className="flex flex-wrap gap-1.5 mb-3">
+          {article.tags.map((tag) => (
+            <TagBadge key={tag.id} tag={tag} />
           ))}
         </div>
-      </div>
-      <div className="p-5">
-        <h3 className="font-playfair font-bold text-lg text-[#1a1a2e] leading-snug mb-2 group-hover:text-[#6c63ff] transition-colors duration-200 text-pretty">
+
+        <h3 className="font-playfair font-bold text-lg text-[#1a1a2e] leading-snug mb-2 group-hover:text-[#6c63ff] transition-colors line-clamp-2">
           {article.title}
         </h3>
-        <p className="text-sm text-[#1a1a2e]/60 leading-relaxed mb-4 line-clamp-2">
+        <p className="text-sm text-[#1a1a2e]/60 leading-relaxed mb-4 line-clamp-3 flex-1">
           {article.excerpt}
         </p>
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <img
-              src={article.authorAvatar}
-              alt={article.author}
-              className="w-7 h-7 rounded-full object-cover ring-2 ring-white"
-            />
-            <span className="text-xs font-medium text-[#1a1a2e]/70">{article.author}</span>
-          </div>
+
+        {/* Meta */}
+        <div className="flex items-center justify-between pt-3 border-t border-black/5">
           <div className="flex items-center gap-3 text-xs text-[#1a1a2e]/40">
             <span className="flex items-center gap-1">
               <Clock size={11} />
-              {article.readingTime} min
+              {article.readingTime} min read
             </span>
             <span className="flex items-center gap-1">
               <Eye size={11} />
-              {(article.views ?? 0).toLocaleString("es-ES")}
+              {article.views.toLocaleString()} views
             </span>
           </div>
+          <Link
+            href={`/article/${article.slug}`}
+            className="inline-flex items-center gap-1 text-xs font-semibold text-[#6c63ff] hover:gap-2 transition-all"
+          >
+            Read article <ArrowRight size={11} />
+          </Link>
         </div>
       </div>
     </motion.article>
   );
 }
 
-// ─── Main page ────────────────────────────────────────────────────────────────
+function MarkdownPreview({ content }: { content: string }) {
+  const lines = content.split("\n");
+  return (
+    <div className="prose prose-sm max-w-none text-[#1a1a2e]/80 space-y-2">
+      {lines.map((line, i) => {
+        if (line.startsWith("# "))
+          return (
+            <h1 key={i} className="font-playfair text-2xl font-bold text-[#1a1a2e] mt-0">
+              {line.slice(2)}
+            </h1>
+          );
+        if (line.startsWith("## "))
+          return (
+            <h2 key={i} className="font-playfair text-lg font-bold text-[#1a1a2e]">
+              {line.slice(3)}
+            </h2>
+          );
+        if (line.startsWith("> "))
+          return (
+            <blockquote
+              key={i}
+              className="border-l-4 border-[#6c63ff] pl-4 italic text-[#1a1a2e]/60"
+            >
+              {line.slice(2)}
+            </blockquote>
+          );
+        if (line.startsWith("- "))
+          return (
+            <li key={i} className="ml-4 list-disc text-[#1a1a2e]/70">
+              {line.slice(2)}
+            </li>
+          );
+        if (line.startsWith("```"))
+          return (
+            <div
+              key={i}
+              className="bg-[#1a1a2e] text-green-400 rounded-lg px-4 py-2 font-mono text-xs"
+            >
+              {line.slice(3) || "code"}
+            </div>
+          );
+        if (line.trim() === "") return <div key={i} className="h-1" />;
+        // inline bold/italic
+        const formatted = line
+          .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+          .replace(/\*(.+?)\*/g, "<em>$1</em>")
+          .replace(/`(.+?)`/g, '<code class="bg-[#ede9fe] text-[#6c63ff] px-1 rounded text-xs">$1</code>');
+        return (
+          <p
+            key={i}
+            className="text-sm leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: formatted }}
+          />
+        );
+      })}
+    </div>
+  );
+}
+
+// ─── Main page ───────────────────────────────────────────────────────────────
 
 export default function HomePage() {
-  const shouldReduce = useReducedMotion();
-  const [activeTab, setActiveTab] = useState<"editor" | "preview">("editor");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [activeTag, setActiveTag] = useState<string | null>(null);
+  const [editorContent, setEditorContent] = useState(SAMPLE_MARKDOWN);
+  const [editorTab, setEditorTab] = useState<"write" | "preview">("write");
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
+  const editorRef = useRef<HTMLTextAreaElement>(null);
+
+  const featuredArticles = ARTICLES.filter((a) => a.featured);
+  const filteredArticles = ARTICLES.filter((a) => {
+    const matchesSearch =
+      !searchQuery ||
+      a.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      a.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesTag =
+      !activeTag || a.tags.some((t) => t.slug === activeTag);
+    return matchesSearch && matchesTag;
+  });
+
+  function handleSubscribe(e: React.FormEvent) {
+    e.preventDefault();
+    if (email.trim()) {
+      setSubscribed(true);
+    }
+  }
+
+  function insertMarkdown(before: string, after = "") {
+    const ta = editorRef.current;
+    if (!ta) return;
+    const start = ta.selectionStart;
+    const end = ta.selectionEnd;
+    const selected = editorContent.slice(start, end);
+    const newContent =
+      editorContent.slice(0, start) +
+      before +
+      selected +
+      after +
+      editorContent.slice(end);
+    setEditorContent(newContent);
+    setTimeout(() => {
+      ta.focus();
+      ta.setSelectionRange(
+        start + before.length,
+        start + before.length + selected.length
+      );
+    }, 0);
+  }
 
   return (
-    <main className="bg-[#f5f5f0] min-h-screen overflow-x-hidden">
-
+    <div className="min-h-screen bg-[#f5f5f0]">
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
-      <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden">
-        {/* Background glow */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full opacity-20"
-          style={{
-            background:
-              "radial-gradient(ellipse at center, #6c63ff 0%, transparent 70%)",
-          }}
-        />
-        {/* Subtle grid */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-[0.025]"
-          style={{
-            backgroundImage:
-              "linear-gradient(#1a1a2e 1px, transparent 1px), linear-gradient(90deg, #1a1a2e 1px, transparent 1px)",
-            backgroundSize: "48px 48px",
-          }}
-        />
+      <section className="relative pt-28 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#6c63ff]/5 rounded-full blur-3xl translate-x-1/3 -translate-y-1/4" />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#8b5cf6]/5 rounded-full blur-3xl -translate-x-1/4 translate-y-1/4" />
+        </div>
 
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left: copy */}
-            <motion.div
-              variants={staggerContainer}
-              initial="hidden"
-              animate="visible"
-            >
-              <motion.div variants={fadeInUp} className="mb-5">
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#6c63ff]/10 border border-[#6c63ff]/20 text-[#6c63ff] text-xs font-semibold tracking-wide">
-                  <Sparkles size={12} />
-                  Plataforma editorial con Markdown
-                </span>
-              </motion.div>
-
-              <motion.h1
-                variants={fadeInUp}
-                className="font-playfair font-bold text-4xl sm:text-5xl lg:text-6xl text-[#1a1a2e] leading-[1.1] tracking-tight text-balance mb-6"
-              >
-                {APP_TAGLINE}
-              </motion.h1>
-
-              <motion.p
-                variants={fadeInUp}
-                className="text-lg text-[#1a1a2e]/60 leading-relaxed mb-8 max-w-lg text-pretty"
-              >
-                {APP_DESCRIPTION}
-              </motion.p>
-
-              <motion.div variants={fadeInUp} className="flex flex-wrap gap-3">
-                <motion.a
-                  href="#editor"
-                  whileHover={shouldReduce ? {} : { scale: 1.03 }}
-                  whileTap={shouldReduce ? {} : { scale: 0.97 }}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#6c63ff] text-white font-semibold text-sm shadow-[0_2px_8px_rgba(108,99,255,0.35),0_0_0_1px_rgba(108,99,255,0.2)] hover:bg-[#5b53e8] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6c63ff] focus-visible:ring-offset-2"
-                >
-                  <Edit size={15} />
-                  Empezar a escribir
-                </motion.a>
-                <motion.a
-                  href="#articles"
-                  whileHover={shouldReduce ? {} : { scale: 1.03 }}
-                  whileTap={shouldReduce ? {} : { scale: 0.97 }}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white border border-black/8 text-[#1a1a2e] font-semibold text-sm shadow-[0_1px_2px_rgba(0,0,0,0.04)] hover:bg-[#f0f0eb] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6c63ff] focus-visible:ring-offset-2"
-                >
-                  Explorar artículos
-                  <ArrowRight size={14} />
-                </motion.a>
-              </motion.div>
-
-              {/* Stats row */}
-              <motion.div
-                variants={fadeInUp}
-                className="mt-10 flex flex-wrap gap-6"
-              >
-                {STATS.slice(0, 3).map((s) => (
-                  <div key={s.label}>
-                    <p className="font-playfair font-bold text-2xl text-[#1a1a2e]">
-                      {s.value}
-                    </p>
-                    <p className="text-xs text-[#1a1a2e]/50 mt-0.5">{s.label}</p>
-                  </div>
-                ))}
-              </motion.div>
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            animate="visible"
+            className="text-center max-w-3xl mx-auto"
+          >
+            {/* Tagline pill */}
+            <motion.div variants={fadeInUp} className="mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#6c63ff]/10 text-[#6c63ff] text-sm font-medium border border-[#6c63ff]/20">
+                <Sparkles size={14} />
+                The editorial platform for modern writers
+              </span>
             </motion.div>
 
-            {/* Right: editor mock */}
-            <motion.div
-              variants={slideInRight}
-              initial="hidden"
-              animate="visible"
-              className="relative"
+            {/* Heading */}
+            <motion.h1
+              variants={fadeInUp}
+              className="font-playfair text-5xl sm:text-6xl lg:text-7xl font-bold text-[#1a1a2e] leading-[1.1] tracking-tight mb-6"
             >
-              <div className="relative rounded-2xl overflow-hidden border border-black/8 shadow-[0_4px_8px_rgba(0,0,0,0.06),0_24px_64px_-16px_rgba(108,99,255,0.22)] bg-white">
-                {/* Window chrome */}
-                <div className="flex items-center gap-1.5 px-4 py-3 bg-[#f8f8f6] border-b border-black/6">
-                  <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
-                  <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
-                  <span className="w-3 h-3 rounded-full bg-[#28c840]" />
-                  <span className="ml-3 text-xs text-[#1a1a2e]/30 font-mono">
-                    mi-primer-articulo.md
-                  </span>
-                </div>
-                {/* Tab bar */}
-                <div className="flex border-b border-black/6">
-                  {(["editor", "preview"] as const).map((tab) => (
-                    <button
-                      key={tab}
-                      onClick={() => setActiveTab(tab)}
-                      className={`px-5 py-2.5 text-xs font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6c63ff] ${
-                        activeTab === tab
-                          ? "text-[#6c63ff] border-b-2 border-[#6c63ff] bg-white"
-                          : "text-[#1a1a2e]/40 hover:text-[#1a1a2e]/70"
-                      }`}
-                    >
-                      {tab === "editor" ? "Editor" : "Vista previa"}
-                    </button>
-                  ))}
-                </div>
-                {/* Content */}
-                <div className="p-5 min-h-[280px] font-mono text-xs leading-relaxed overflow-hidden">
-                  {activeTab === "editor" ? (
-                    <pre className="text-[#1a1a2e]/80 whitespace-pre-wrap">
-                      {MARKDOWN_DEMO}
-                    </pre>
-                  ) : (
-                    <div className="font-sans space-y-3">
-                      {RENDERED_DEMO.map((block, i) => {
-                        if (block.type === "h1") {
-                          return (
-                            <h1 key={i} className="font-playfair font-bold text-xl text-[#1a1a2e]">
-                              {block.text}
-                            </h1>
-                          );
-                        }
-                        if (block.type === "h2") {
-                          return (
-                            <h2 key={i} className="font-playfair font-semibold text-base text-[#1a1a2e] mt-2">
-                              {block.text}
-                            </h2>
-                          );
-                        }
-                        if (block.type === "p") {
-                          return (
-                            <p key={i} className="text-sm text-[#1a1a2e]/70">
-                              {block.text}
-                            </p>
-                          );
-                        }
-                        if (block.type === "li") {
-                          return (
-                            <ul key={i} className="space-y-1 pl-4">
-                              {(block.items ?? []).map((item, j) => (
-                                <li key={j} className="text-sm text-[#1a1a2e]/70 flex items-center gap-2">
-                                  <span className="w-1.5 h-1.5 rounded-full bg-[#6c63ff] flex-shrink-0" />
-                                  {item}
-                                </li>
-                              ))}
-                            </ul>
-                          );
-                        }
-                        if (block.type === "code") {
-                          return (
-                            <div key={i} className="rounded-lg bg-[#1a1a2e] p-3 overflow-x-auto">
-                              {(block.lines ?? []).map((line, j) => (
-                                <div key={j} className="text-[#a5b4fc] font-mono text-xs leading-relaxed">
-                                  {line}
-                                </div>
-                              ))}
-                            </div>
-                          );
-                        }
-                        if (block.type === "blockquote") {
-                          return (
-                            <blockquote key={i} className="border-l-2 border-[#6c63ff] pl-3 text-sm text-[#1a1a2e]/60 italic">
-                              {block.text}
-                            </blockquote>
-                          );
-                        }
-                        return null;
-                      })}
-                    </div>
-                  )}
-                </div>
-              </div>
-              {/* Floating badge */}
-              <motion.div
-                animate={shouldReduce ? {} : { y: [0, -6, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-4 -left-4 bg-white rounded-xl px-4 py-2.5 shadow-[0_4px_16px_rgba(0,0,0,0.12)] border border-black/5 flex items-center gap-2"
+              Write with clarity.
+              <br />
+              <span className="text-[#6c63ff]">Publish with style.</span>
+            </motion.h1>
+
+            {/* Description */}
+            <motion.p
+              variants={fadeInUp}
+              className="text-lg sm:text-xl text-[#1a1a2e]/60 leading-relaxed mb-10 max-w-2xl mx-auto"
+            >
+              BlogMD is the modern editorial platform with full Markdown support.
+              Create, edit and share your articles with the world — without distractions.
+            </motion.p>
+
+            {/* CTAs */}
+            <motion.div
+              variants={fadeInUp}
+              className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            >
+              <Link
+                href="#editor"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector("#editor")?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#6c63ff] text-white font-semibold shadow-[0_4px_16px_rgba(108,99,255,0.35)] hover:shadow-[0_6px_24px_rgba(108,99,255,0.45)] hover:-translate-y-0.5 transition-all duration-200"
               >
-                <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse" />
-                <span className="text-xs font-semibold text-[#1a1a2e]">Vista previa en vivo</span>
-              </motion.div>
+                <Edit size={16} />
+                Start writing
+              </Link>
+              <Link
+                href="#articles"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector("#articles")?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-[#1a1a2e] font-semibold border border-black/10 hover:border-[#6c63ff]/40 hover:text-[#6c63ff] hover:-translate-y-0.5 transition-all duration-200 shadow-sm"
+              >
+                Explore articles <ArrowRight size={16} />
+              </Link>
             </motion.div>
-          </div>
+          </motion.div>
+
+          {/* Hero stats strip */}
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            animate="visible"
+            className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4"
+          >
+            {STATS.map((stat) => (
+              <motion.div
+                key={stat.label}
+                variants={scaleIn}
+                className="bg-white rounded-2xl p-5 text-center border border-black/5 shadow-sm"
+              >
+                <div className="font-playfair text-3xl font-bold text-[#6c63ff] mb-1">
+                  {stat.value}
+                </div>
+                <div className="text-sm font-semibold text-[#1a1a2e] mb-0.5">
+                  {stat.label}
+                </div>
+                <div className="text-xs text-[#1a1a2e]/40">{stat.description}</div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
-      {/* ── ARTICLES ─────────────────────────────────────────────────────── */}
-      <section id="articles" className="py-20 md:py-28">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ── FEATURED ARTICLES ────────────────────────────────────────────── */}
+      <section id="articles" className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
           >
-            <motion.div variants={fadeInUp} className="mb-12">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#6c63ff] mb-3 block">
-                Artículos destacados
-              </span>
-              <div className="flex items-end justify-between gap-4 flex-wrap">
-                <h2 className="font-playfair font-bold text-3xl md:text-4xl text-[#1a1a2e] tracking-tight text-balance">
-                  Lo mejor de la comunidad
+            <motion.div
+              variants={fadeInUp}
+              className="flex items-end justify-between mb-10"
+            >
+              <div>
+                <p className="text-sm font-semibold text-[#6c63ff] uppercase tracking-widest mb-2">
+                  Editor&apos;s picks
+                </p>
+                <h2 className="font-playfair text-4xl font-bold text-[#1a1a2e]">
+                  Featured Articles
                 </h2>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-[#6c63ff] hover:text-[#5b53e8] transition-colors"
-                >
-                  Ver todos
-                  <ChevronRight size={14} />
-                </a>
               </div>
+              <Link
+                href="#all-articles"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector("#all-articles")?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-[#6c63ff] hover:gap-3 transition-all"
+              >
+                View all <ChevronRight size={14} />
+              </Link>
             </motion.div>
 
-            {/* Featured article — full width */}
-            <motion.div variants={scaleIn} className="mb-8">
-              <div className="group relative rounded-2xl overflow-hidden bg-white border border-black/5 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_8px_rgba(0,0,0,0.06),0_20px_48px_-12px_rgba(108,99,255,0.2)] transition-all duration-300 grid md:grid-cols-2">
-                <div className="relative overflow-hidden aspect-[4/3] md:aspect-auto">
-                  <img
-                    src={ARTICLES[0]?.coverImage ?? ""}
-                    alt={ARTICLES[0]?.title ?? ""}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/10" />
-                  <div className="absolute top-4 left-4">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#6c63ff] text-white text-xs font-semibold">
-                      <Star size={10} fill="white" />
-                      Destacado
-                    </span>
-                  </div>
-                </div>
-                <div className="p-8 flex flex-col justify-center">
-                  <div className="flex gap-2 mb-4 flex-wrap">
-                    {(ARTICLES[0]?.tags ?? []).map((tag) => (
-                      <TagPill key={tag.id} tag={tag} />
-                    ))}
-                  </div>
-                  <h3 className="font-playfair font-bold text-2xl md:text-3xl text-[#1a1a2e] leading-tight mb-3 group-hover:text-[#6c63ff] transition-colors duration-200 text-balance">
-                    {ARTICLES[0]?.title}
-                  </h3>
-                  <p className="text-[#1a1a2e]/60 leading-relaxed mb-6 text-pretty">
-                    {ARTICLES[0]?.excerpt}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <img
-                        src={ARTICLES[0]?.authorAvatar ?? ""}
-                        alt={ARTICLES[0]?.author ?? ""}
-                        className="w-9 h-9 rounded-full object-cover ring-2 ring-white shadow-sm"
-                      />
-                      <div>
-                        <p className="text-sm font-semibold text-[#1a1a2e]">
-                          {ARTICLES[0]?.author}
-                        </p>
-                        <p className="text-xs text-[#1a1a2e]/40">
-                          {ARTICLES[0]?.publishedAt}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3 text-xs text-[#1a1a2e]/40">
-                      <span className="flex items-center gap-1">
-                        <Clock size={12} />
-                        {ARTICLES[0]?.readingTime} min
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Eye size={12} />
-                        {(ARTICLES[0]?.views ?? 0).toLocaleString("es-ES")}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Grid of remaining articles */}
             <motion.div
               variants={staggerContainer}
-              className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+              className="grid grid-cols-1 md:grid-cols-2 gap-6"
             >
-              {ARTICLES.slice(1).map((article, i) => (
+              {featuredArticles.map((article, i) => (
+                <ArticleCard key={article.id} article={article} index={i} />
+              ))}
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── SEARCH + FILTER ──────────────────────────────────────────────── */}
+      <section className="py-8 px-4 sm:px-6 lg:px-8 bg-white border-y border-black/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col sm:flex-row gap-4 items-center">
+            {/* Search */}
+            <div className="relative flex-1 w-full">
+              <Search
+                size={16}
+                className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#1a1a2e]/30"
+              />
+              <input
+                type="text"
+                placeholder="Search articles..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-black/10 bg-[#f5f5f0] text-sm text-[#1a1a2e] placeholder:text-[#1a1a2e]/30 focus:outline-none focus:ring-2 focus:ring-[#6c63ff]/30 focus:border-[#6c63ff]/40 transition-all"
+              />
+            </div>
+
+            {/* Tag filters */}
+            <div className="flex items-center gap-2 flex-wrap">
+              <button
+                onClick={() => setActiveTag(null)}
+                className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all ${
+                  activeTag === null
+                    ? "bg-[#6c63ff] text-white shadow-sm"
+                    : "bg-[#f5f5f0] text-[#1a1a2e]/60 hover:bg-[#e2e8f0]"
+                }`}
+              >
+                All
+              </button>
+              {TAGS.map((tag) => (
+                <button
+                  key={tag.id}
+                  onClick={() =>
+                    setActiveTag(activeTag === tag.slug ? null : tag.slug)
+                  }
+                  className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all ${
+                    activeTag === tag.slug
+                      ? "text-white shadow-sm"
+                      : "bg-[#f5f5f0] text-[#1a1a2e]/60 hover:bg-[#e2e8f0]"
+                  }`}
+                  style={
+                    activeTag === tag.slug
+                      ? { backgroundColor: tag.color }
+                      : {}
+                  }
+                >
+                  {tag.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── ALL ARTICLES ─────────────────────────────────────────────────── */}
+      <section id="all-articles" className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+          >
+            <motion.div variants={fadeInUp} className="mb-10">
+              <h2 className="font-playfair text-3xl font-bold text-[#1a1a2e]">
+                All Articles
+              </h2>
+              {filteredArticles.length === 0 && (
+                <p className="mt-4 text-[#1a1a2e]/50 text-sm">
+                  No articles found for your search.
+                </p>
+              )}
+            </motion.div>
+
+            <motion.div
+              variants={staggerContainer}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            >
+              {filteredArticles.map((article, i) => (
                 <ArticleCard key={article.id} article={article} index={i} />
               ))}
             </motion.div>
@@ -589,71 +611,55 @@ export default function HomePage() {
       </section>
 
       {/* ── CATEGORIES ───────────────────────────────────────────────────── */}
-      <section
-        id="categories"
-        className="py-20 md:py-28 bg-[#1a1a2e] relative overflow-hidden"
-      >
-        {/* Glow */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute top-0 right-0 w-[500px] h-[400px] opacity-10"
-          style={{
-            background:
-              "radial-gradient(ellipse at top right, #6c63ff 0%, transparent 70%)",
-          }}
-        />
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="categories" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
+            viewport={{ once: true, margin: "-60px" }}
           >
-            <motion.div variants={fadeInUp} className="mb-12 text-center">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#6c63ff] mb-3 block">
-                Categorías
-              </span>
-              <h2 className="font-playfair font-bold text-3xl md:text-4xl text-white tracking-tight text-balance">
-                Encuentra tu tema favorito
-              </h2>
-              <p className="mt-4 text-white/50 max-w-lg mx-auto leading-relaxed text-pretty">
-                Explora artículos organizados por categorías. Desde tecnología hasta escritura creativa, hay algo para cada lector.
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <p className="text-sm font-semibold text-[#6c63ff] uppercase tracking-widest mb-2">
+                Topics
               </p>
+              <h2 className="font-playfair text-4xl font-bold text-[#1a1a2e]">
+                Explore by Category
+              </h2>
             </motion.div>
 
             <motion.div
               variants={staggerContainer}
-              className="grid grid-cols-2 md:grid-cols-3 gap-4"
+              className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4"
             >
-              {TAGS.map((tag, i) => (
-                <motion.a
+              {TAGS.map((tag) => (
+                <motion.button
                   key={tag.id}
-                  href="#articles"
                   variants={scaleIn}
-                  whileHover={shouldReduce ? {} : { scale: 1.03, y: -2 }}
-                  whileTap={shouldReduce ? {} : { scale: 0.97 }}
-                  className="group relative rounded-2xl p-6 border border-white/8 bg-white/5 hover:bg-white/10 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6c63ff]"
+                  onClick={() =>
+                    setActiveTag(activeTag === tag.slug ? null : tag.slug)
+                  }
+                  className="group flex flex-col items-center gap-3 p-5 rounded-2xl border-2 transition-all duration-200 hover:-translate-y-1"
+                  style={{
+                    borderColor:
+                      activeTag === tag.slug ? tag.color : "transparent",
+                    backgroundColor:
+                      activeTag === tag.slug ? tag.color + "10" : "#f5f5f0",
+                  }}
                 >
                   <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
-                    style={{ backgroundColor: tag.color + "22" }}
+                    className="w-10 h-10 rounded-xl flex items-center justify-center text-lg font-bold"
+                    style={{ backgroundColor: tag.color + "20", color: tag.color }}
                   >
-                    <span
-                      className="text-lg font-playfair font-bold"
-                      style={{ color: tag.color }}
-                    >
-                      {tag.name.charAt(0)}
-                    </span>
+                    {tag.name[0]}
                   </div>
-                  <h3 className="font-semibold text-white mb-1">{tag.name}</h3>
-                  <p className="text-xs text-white/40">
-                    {[14, 9, 22, 7, 11, 18][i] ?? 10} artículos
-                  </p>
-                  <ChevronRight
-                    size={14}
-                    className="absolute top-5 right-5 text-white/20 group-hover:text-white/60 transition-colors"
-                  />
-                </motion.a>
+                  <span
+                    className="text-sm font-semibold text-center"
+                    style={{ color: tag.color }}
+                  >
+                    {tag.name}
+                  </span>
+                </motion.button>
               ))}
             </motion.div>
           </motion.div>
@@ -661,54 +667,46 @@ export default function HomePage() {
       </section>
 
       {/* ── FEATURES ─────────────────────────────────────────────────────── */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
+            viewport={{ once: true, margin: "-60px" }}
           >
-            {/* Split header */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-              <motion.div variants={slideInLeft}>
-                <span className="text-xs font-semibold uppercase tracking-widest text-[#6c63ff] mb-3 block">
-                  Funcionalidades
-                </span>
-                <h2 className="font-playfair font-bold text-3xl md:text-4xl text-[#1a1a2e] tracking-tight text-balance">
-                  Todo lo que necesitas para escribir mejor
-                </h2>
-              </motion.div>
-              <motion.p
-                variants={slideInRight}
-                className="text-[#1a1a2e]/60 leading-relaxed text-lg text-pretty"
-              >
-                BlogMD combina la potencia de Markdown con una interfaz diseñada para que el proceso de escritura sea fluido, agradable y sin fricciones.
-              </motion.p>
-            </div>
+            <motion.div variants={fadeInUp} className="text-center mb-14">
+              <p className="text-sm font-semibold text-[#6c63ff] uppercase tracking-widest mb-2">
+                Features
+              </p>
+              <h2 className="font-playfair text-4xl font-bold text-[#1a1a2e] mb-4">
+                Everything you need to write
+              </h2>
+              <p className="text-[#1a1a2e]/55 max-w-xl mx-auto">
+                BlogMD combines the simplicity of Markdown with the power of a
+                modern editorial platform.
+              </p>
+            </motion.div>
 
-            {/* Bento grid */}
             <motion.div
               variants={staggerContainer}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
             >
-              {FEATURES.map((feature, i) => {
+              {FEATURES.map((feature) => {
                 const Icon = feature.icon;
-                const isLarge = i === 0 || i === 5;
                 return (
                   <motion.div
                     key={feature.title}
                     variants={fadeInUp}
-                    whileHover={shouldReduce ? {} : { y: -3 }}
-                    className={`group rounded-2xl p-6 bg-white border border-black/5 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.07)] hover:shadow-[0_4px_8px_rgba(0,0,0,0.06),0_16px_40px_-12px_rgba(108,99,255,0.15)] transition-all duration-300 ${isLarge ? "lg:col-span-1" : ""}`}
+                    className="bg-white rounded-2xl p-6 border border-black/5 shadow-sm hover:shadow-md transition-shadow"
                   >
                     <div
-                      className="w-11 h-11 rounded-xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
+                      className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
                       style={{ backgroundColor: feature.accent + "15" }}
                     >
                       <Icon size={20} style={{ color: feature.accent }} />
                     </div>
-                    <h3 className="font-semibold text-[#1a1a2e] mb-2 text-base">
+                    <h3 className="font-semibold text-[#1a1a2e] mb-2">
                       {feature.title}
                     </h3>
                     <p className="text-sm text-[#1a1a2e]/55 leading-relaxed">
@@ -722,365 +720,196 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── EDITOR DEMO ──────────────────────────────────────────────────── */}
+      {/* ── MARKDOWN EDITOR ──────────────────────────────────────────────── */}
       <section
         id="editor"
-        className="py-20 md:py-28 bg-gradient-to-b from-[#f5f5f0] to-[#ede9fe]/40"
+        className="py-20 px-4 sm:px-6 lg:px-8 bg-[#1a1a2e]"
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
+            viewport={{ once: true, margin: "-60px" }}
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#6c63ff] mb-3 block">
-                Editor
-              </span>
-              <h2 className="font-playfair font-bold text-3xl md:text-4xl text-[#1a1a2e] tracking-tight text-balance mb-4">
-                Escribe en Markdown, publica con elegancia
+              <p className="text-sm font-semibold text-[#6c63ff] uppercase tracking-widest mb-2">
+                Try it now
+              </p>
+              <h2 className="font-playfair text-4xl font-bold text-white mb-4">
+                Markdown Editor
               </h2>
-              <p className="text-[#1a1a2e]/60 max-w-xl mx-auto leading-relaxed text-pretty">
-                Nuestro editor divide la pantalla entre el código Markdown y la vista renderizada. Sin configuración, sin complicaciones.
+              <p className="text-white/50 max-w-xl mx-auto">
+                Write in Markdown and see the result instantly. No setup required.
               </p>
             </motion.div>
 
-            {/* Full editor mock */}
             <motion.div
               variants={scaleIn}
-              className="rounded-2xl overflow-hidden border border-black/8 shadow-[0_4px_8px_rgba(0,0,0,0.06),0_32px_80px_-20px_rgba(108,99,255,0.2)] bg-white"
+              className="bg-white rounded-3xl overflow-hidden shadow-2xl border border-white/10"
             >
-              {/* Chrome */}
-              <div className="flex items-center gap-1.5 px-5 py-3.5 bg-[#f8f8f6] border-b border-black/6">
-                <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
-                <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
-                <span className="w-3 h-3 rounded-full bg-[#28c840]" />
-                <span className="ml-4 text-xs text-[#1a1a2e]/30 font-mono flex-1">
-                  blogmd — editor
-                </span>
-                <div className="flex items-center gap-2">
-                  <span className="px-2.5 py-1 rounded-md bg-[#6c63ff]/10 text-[#6c63ff] text-xs font-semibold">
-                    Guardar
-                  </span>
-                  <span className="px-2.5 py-1 rounded-md bg-[#6c63ff] text-white text-xs font-semibold">
-                    Publicar
-                  </span>
+              {/* Editor toolbar */}
+              <div className="flex items-center justify-between px-4 py-3 bg-[#f5f5f0] border-b border-black/8">
+                <div className="flex items-center gap-1.5">
+                  <div className="w-3 h-3 rounded-full bg-red-400" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-400" />
+                  <div className="w-3 h-3 rounded-full bg-green-400" />
                 </div>
-              </div>
 
-              {/* Split pane */}
-              <div className="grid md:grid-cols-2 divide-x divide-black/6 min-h-[320px]">
-                {/* Left: raw markdown */}
-                <div className="p-6 bg-[#fafaf8]">
-                  <p className="text-xs font-semibold text-[#1a1a2e]/30 uppercase tracking-widest mb-4">
-                    Markdown
-                  </p>
-                  <pre className="font-mono text-xs text-[#1a1a2e]/70 leading-relaxed whitespace-pre-wrap">
-                    {MARKDOWN_DEMO}
-                  </pre>
+                {/* Tabs */}
+                <div className="flex items-center gap-1 bg-white rounded-lg p-1 border border-black/8">
+                  <button
+                    onClick={() => setEditorTab("write")}
+                    className={`px-3 py-1 rounded-md text-xs font-semibold transition-all ${
+                      editorTab === "write"
+                        ? "bg-[#6c63ff] text-white shadow-sm"
+                        : "text-[#1a1a2e]/50 hover:text-[#1a1a2e]"
+                    }`}
+                  >
+                    Write
+                  </button>
+                  <button
+                    onClick={() => setEditorTab("preview")}
+                    className={`px-3 py-1 rounded-md text-xs font-semibold transition-all ${
+                      editorTab === "preview"
+                        ? "bg-[#6c63ff] text-white shadow-sm"
+                        : "text-[#1a1a2e]/50 hover:text-[#1a1a2e]"
+                    }`}
+                  >
+                    Preview
+                  </button>
                 </div>
-                {/* Right: rendered */}
-                <div className="p-6">
-                  <p className="text-xs font-semibold text-[#1a1a2e]/30 uppercase tracking-widest mb-4">
-                    Vista previa
-                  </p>
-                  <div className="space-y-3">
-                    {RENDERED_DEMO.map((block, i) => {
-                      if (block.type === "h1") {
-                        return (
-                          <h1 key={i} className="font-playfair font-bold text-xl text-[#1a1a2e]">
-                            {block.text}
-                          </h1>
-                        );
-                      }
-                      if (block.type === "h2") {
-                        return (
-                          <h2 key={i} className="font-playfair font-semibold text-base text-[#1a1a2e] mt-2">
-                            {block.text}
-                          </h2>
-                        );
-                      }
-                      if (block.type === "p") {
-                        return (
-                          <p key={i} className="text-sm text-[#1a1a2e]/70">
-                            {block.text}
-                          </p>
-                        );
-                      }
-                      if (block.type === "li") {
-                        return (
-                          <ul key={i} className="space-y-1 pl-4">
-                            {(block.items ?? []).map((item, j) => (
-                              <li key={j} className="text-sm text-[#1a1a2e]/70 flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#6c63ff] flex-shrink-0" />
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
-                        );
-                      }
-                      if (block.type === "code") {
-                        return (
-                          <div key={i} className="rounded-lg bg-[#1a1a2e] p-3">
-                            {(block.lines ?? []).map((line, j) => (
-                              <div key={j} className="text-[#a5b4fc] font-mono text-xs leading-relaxed">
-                                {line}
-                              </div>
-                            ))}
-                          </div>
-                        );
-                      }
-                      if (block.type === "blockquote") {
-                        return (
-                          <blockquote key={i} className="border-l-2 border-[#6c63ff] pl-3 text-sm text-[#1a1a2e]/60 italic">
-                            {block.text}
-                          </blockquote>
-                        );
-                      }
-                      return null;
-                    })}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
 
-            {/* Markdown cheatsheet pills */}
-            <motion.div
-              variants={fadeInUp}
-              className="mt-8 flex flex-wrap gap-2 justify-center"
-            >
-              {[
-                { syntax: "**negrita**", label: "Negrita" },
-                { syntax: "_cursiva_", label: "Cursiva" },
-                { syntax: "# Título", label: "Encabezado" },
-                { syntax: "- lista", label: "Lista" },
-                { syntax: "`código`", label: "Código" },
-                { syntax: "[link](url)", label: "Enlace" },
-                { syntax: "> cita", label: "Cita" },
-                { syntax: "---", label: "Separador" },
-              ].map((item) => (
-                <span
-                  key={item.syntax}
-                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white border border-black/8 text-xs shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
-                >
-                  <code className="font-mono text-[#6c63ff]">{item.syntax}</code>
-                  <span className="text-[#1a1a2e]/40">{item.label}</span>
-                </span>
-              ))}
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── TESTIMONIALS ─────────────────────────────────────────────────── */}
-      <section className="py-20 md:py-28 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-          >
-            <motion.div variants={fadeInUp} className="text-center mb-12">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#6c63ff] mb-3 block">
-                Testimonios
-              </span>
-              <h2 className="font-playfair font-bold text-3xl md:text-4xl text-[#1a1a2e] tracking-tight text-balance">
-                Lo que dicen nuestros escritores
-              </h2>
-            </motion.div>
-
-            <motion.div
-              variants={staggerContainer}
-              className="grid md:grid-cols-3 gap-6"
-            >
-              {TESTIMONIALS.map((t) => (
-                <motion.div
-                  key={t.id}
-                  variants={fadeInUp}
-                  whileHover={shouldReduce ? {} : { y: -4 }}
-                  className="rounded-2xl p-6 bg-[#f5f5f0] border border-black/5 shadow-[0_1px_2px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_16px_rgba(108,99,255,0.12)] transition-all duration-300"
-                >
-                  <div className="flex gap-0.5 mb-4">
-                    {Array.from({ length: t.stars }).map((_, i) => (
-                      <Star key={i} size={13} fill="#6c63ff" className="text-[#6c63ff]" />
-                    ))}
-                  </div>
-                  <p className="text-[#1a1a2e]/70 leading-relaxed text-sm mb-5 text-pretty">
-                    "{t.quote}"
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <img
-                      src={t.avatar}
-                      alt={t.author}
-                      className="w-10 h-10 rounded-full object-cover ring-2 ring-white shadow-sm"
-                    />
-                    <div>
-                      <p className="text-sm font-semibold text-[#1a1a2e]">{t.author}</p>
-                      <p className="text-xs text-[#1a1a2e]/45">{t.role}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── ABOUT / STATS ────────────────────────────────────────────────── */}
-      <section id="about" className="py-20 md:py-28 bg-[#f5f5f0]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            className="grid lg:grid-cols-2 gap-16 items-center"
-          >
-            {/* Left: image + floating card */}
-            <motion.div variants={slideInLeft} className="relative">
-              <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-[0_4px_8px_rgba(0,0,0,0.06),0_24px_64px_-16px_rgba(108,99,255,0.18)] border border-black/5">
-                <img
-                  src="https://us.123rf.com/450wm/pandorapictures/pandorapictures1801/pandorapictures180100566/94274386-young-woman-writer-in-library-at-home-creative-occupation-working-on-typewriter.jpg"
-                  alt="Escritora trabajando con BlogMD"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              {/* Floating stats card */}
-              <motion.div
-                variants={scaleIn}
-                className="absolute -bottom-6 -right-4 md:-right-8 bg-white rounded-2xl p-5 shadow-[0_4px_16px_rgba(0,0,0,0.12)] border border-black/5 min-w-[180px]"
-              >
-                <div className="grid grid-cols-2 gap-4">
-                  {STATS.map((s) => (
-                    <div key={s.label}>
-                      <p className="font-playfair font-bold text-xl text-[#6c63ff]">
-                        {s.value}
-                      </p>
-                      <p className="text-xs text-[#1a1a2e]/50 mt-0.5 leading-tight">
-                        {s.label}
-                      </p>
-                    </div>
+                {/* Formatting buttons */}
+                <div className="flex items-center gap-1">
+                  {[
+                    { label: "B", action: () => insertMarkdown("**", "**"), title: "Bold" },
+                    { label: "I", action: () => insertMarkdown("*", "*"), title: "Italic" },
+                    { label: "H", action: () => insertMarkdown("## "), title: "Heading" },
+                    { label: "`", action: () => insertMarkdown("`", "`"), title: "Code" },
+                  ].map((btn) => (
+                    <button
+                      key={btn.label}
+                      onClick={btn.action}
+                      title={btn.title}
+                      className="w-7 h-7 rounded-md bg-white border border-black/8 text-xs font-bold text-[#1a1a2e]/60 hover:text-[#6c63ff] hover:border-[#6c63ff]/30 transition-all"
+                    >
+                      {btn.label}
+                    </button>
                   ))}
                 </div>
-              </motion.div>
-            </motion.div>
+              </div>
 
-            {/* Right: copy */}
-            <motion.div variants={slideInRight}>
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#6c63ff] mb-3 block">
-                Acerca de BlogMD
-              </span>
-              <h2 className="font-playfair font-bold text-3xl md:text-4xl text-[#1a1a2e] tracking-tight text-balance mb-6">
-                Construido para escritores que se toman en serio su oficio
-              </h2>
-              <p className="text-[#1a1a2e]/60 leading-relaxed mb-5 text-pretty">
-                BlogMD nació de la frustración con plataformas que añaden capas de complejidad innecesaria. Creemos que la escritura debe ser el centro de la experiencia, no la herramienta.
-              </p>
-              <p className="text-[#1a1a2e]/60 leading-relaxed mb-8 text-pretty">
-                Markdown es el lenguaje de los escritores modernos: limpio, portable y universal. Nosotros lo tomamos como base y construimos alrededor de él una experiencia editorial completa.
-              </p>
-              <ul className="space-y-3 mb-8">
-                {[
-                  "Sin suscripciones ocultas ni límites de artículos",
-                  "Tu contenido siempre exportable en formato abierto",
-                  "Diseño accesible y optimizado para la lectura",
-                  "Comunidad activa de escritores y desarrolladores",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-[#1a1a2e]/70">
-                    <span className="mt-0.5 w-5 h-5 rounded-full bg-[#6c63ff]/12 flex items-center justify-center flex-shrink-0">
-                      <Check size={11} className="text-[#6c63ff]" strokeWidth={2.5} />
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <div className="flex gap-3 flex-wrap">
-                <motion.a
-                  href="#editor"
-                  whileHover={shouldReduce ? {} : { scale: 1.03 }}
-                  whileTap={shouldReduce ? {} : { scale: 0.97 }}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#6c63ff] text-white font-semibold text-sm shadow-[0_2px_8px_rgba(108,99,255,0.3)] hover:bg-[#5b53e8] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6c63ff] focus-visible:ring-offset-2"
+              {/* Editor body */}
+              <div className="grid grid-cols-1 md:grid-cols-2 min-h-[400px]">
+                {/* Write pane */}
+                <div
+                  className={`border-r border-black/8 ${
+                    editorTab === "preview" ? "hidden md:block" : ""
+                  }`}
                 >
-                  <Edit size={14} />
-                  Probar el editor
-                </motion.a>
-                <motion.a
-                  href="#"
-                  whileHover={shouldReduce ? {} : { scale: 1.03 }}
-                  whileTap={shouldReduce ? {} : { scale: 0.97 }}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white border border-black/8 text-[#1a1a2e] font-semibold text-sm hover:bg-[#f0f0eb] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6c63ff] focus-visible:ring-offset-2"
+                  <textarea
+                    ref={editorRef}
+                    value={editorContent}
+                    onChange={(e) => setEditorContent(e.target.value)}
+                    placeholder="Start writing in Markdown..."
+                    className="w-full h-full min-h-[400px] p-6 font-mono text-sm text-[#1a1a2e] bg-white resize-none focus:outline-none leading-relaxed"
+                    spellCheck={false}
+                  />
+                </div>
+
+                {/* Preview pane */}
+                <div
+                  className={`p-6 overflow-auto ${
+                    editorTab === "write" ? "hidden md:block" : ""
+                  }`}
                 >
-                  <Github size={14} />
-                  Ver en GitHub
-                </motion.a>
+                  <div className="text-xs font-semibold text-[#1a1a2e]/30 uppercase tracking-widest mb-4">
+                    Preview
+                  </div>
+                  <MarkdownPreview content={editorContent} />
+                </div>
+              </div>
+
+              {/* Editor footer */}
+              <div className="flex items-center justify-between px-6 py-3 bg-[#f5f5f0] border-t border-black/8">
+                <span className="text-xs text-[#1a1a2e]/40">
+                  {editorContent.split(" ").filter(Boolean).length} words ·{" "}
+                  {Math.ceil(
+                    editorContent.split(" ").filter(Boolean).length / 200
+                  )}{" "}
+                  min read
+                </span>
+                <button className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-[#6c63ff] text-white text-xs font-semibold hover:bg-[#5a52d5] transition-colors shadow-sm">
+                  <Check size={12} /> Publish
+                </button>
               </div>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* ── CTA BANNER ───────────────────────────────────────────────────── */}
-      <section className="py-20 md:py-28 bg-[#1a1a2e] relative overflow-hidden">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse at 60% 50%, rgba(108,99,255,0.18) 0%, transparent 65%)",
-          }}
-        />
-        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* ── NEWSLETTER / CTA ─────────────────────────────────────────────── */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-2xl mx-auto text-center">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
+            viewport={{ once: true, margin: "-60px" }}
           >
-            <motion.div variants={scaleIn} className="mb-6">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#6c63ff]/20 border border-[#6c63ff]/30 mb-6">
-                <Edit size={28} className="text-[#6c63ff]" />
-              </div>
-            </motion.div>
-            <motion.h2
-              variants={fadeInUp}
-              className="font-playfair font-bold text-3xl md:text-5xl text-white tracking-tight text-balance mb-5"
-            >
-              Tu próximo gran artículo empieza aquí
-            </motion.h2>
-            <motion.p
-              variants={fadeInUp}
-              className="text-white/50 leading-relaxed mb-8 text-lg text-pretty"
-            >
-              Únete a miles de escritores que ya publican con claridad y estilo. El editor te espera, sin registro previo.
-            </motion.p>
             <motion.div
-              variants={fadeInUp}
-              className="flex flex-wrap gap-3 justify-center"
+              variants={scaleIn}
+              className="bg-gradient-to-br from-[#6c63ff] to-[#8b5cf6] rounded-3xl p-10 shadow-[0_8px_40px_rgba(108,99,255,0.3)]"
             >
-              <motion.a
-                href="#editor"
-                whileHover={shouldReduce ? {} : { scale: 1.04 }}
-                whileTap={shouldReduce ? {} : { scale: 0.97 }}
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#6c63ff] text-white font-semibold shadow-[0_2px_8px_rgba(108,99,255,0.4),0_0_0_1px_rgba(108,99,255,0.3)] hover:bg-[#5b53e8] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6c63ff] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1a1a2e]"
-              >
-                <Edit size={16} />
-                Abrir el editor gratis
-              </motion.a>
-              <motion.a
-                href="#articles"
-                whileHover={shouldReduce ? {} : { scale: 1.04 }}
-                whileTap={shouldReduce ? {} : { scale: 0.97 }}
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white/8 border border-white/12 text-white font-semibold hover:bg-white/14 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
-              >
-                Leer artículos
-                <ArrowRight size={15} />
-              </motion.a>
+              <Heart
+                size={32}
+                className="text-white/60 mx-auto mb-4"
+                fill="currentColor"
+              />
+              <h2 className="font-playfair text-3xl font-bold text-white mb-3">
+                Stay up to date
+              </h2>
+              <p className="text-white/70 mb-8 leading-relaxed">
+                Receive the best articles directly in your inbox. No spam,
+                unsubscribe whenever you want.
+              </p>
+
+              {subscribed ? (
+                <motion.div
+                  variants={fadeIn}
+                  initial="hidden"
+                  animate="visible"
+                  className="flex items-center justify-center gap-2 text-white font-semibold"
+                >
+                  <Check size={20} />
+                  You&apos;re subscribed! Thank you.
+                </motion.div>
+              ) : (
+                <form
+                  onSubmit={handleSubscribe}
+                  className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+                >
+                  <input
+                    type="email"
+                    placeholder="your@email.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="flex-1 px-4 py-3 rounded-xl bg-white/15 border border-white/25 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-white/40 text-sm"
+                  />
+                  <button
+                    type="submit"
+                    className="px-6 py-3 rounded-xl bg-white text-[#6c63ff] font-semibold text-sm hover:bg-white/90 transition-colors shadow-sm whitespace-nowrap"
+                  >
+                    Subscribe
+                  </button>
+                </form>
+              )}
             </motion.div>
           </motion.div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

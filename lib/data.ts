@@ -1,7 +1,7 @@
 export const APP_NAME = "BlogMD";
-export const APP_TAGLINE = "Escribe con claridad. Publica con estilo.";
+export const APP_TAGLINE = "Write with clarity. Publish with style.";
 export const APP_DESCRIPTION =
-  "Plataforma editorial moderna con soporte completo para Markdown. Crea, edita y comparte artículos con el mundo.";
+  "Modern editorial platform with full Markdown support. Create, edit and share articles with the world.";
 
 export interface NavLink {
   label: string;
@@ -9,15 +9,15 @@ export interface NavLink {
 }
 
 export const navLinks: NavLink[] = [
-  { label: "Inicio", href: "/" },
-  { label: "Artículos", href: "#articles" },
-  { label: "Categorías", href: "#categories" },
+  { label: "Home", href: "/" },
+  { label: "Articles", href: "#articles" },
+  { label: "Categories", href: "#categories" },
   { label: "Editor", href: "#editor" },
-  { label: "Acerca de", href: "#about" },
+  { label: "About", href: "#about" },
 ];
 
 export const navCTA = {
-  label: "Nuevo artículo",
+  label: "New article",
   href: "#editor",
 };
 

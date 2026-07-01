@@ -19,16 +19,16 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "BlogMD — Escribe con claridad",
+    default: "BlogMD — Write with clarity",
     template: "%s | BlogMD",
   },
   description:
-    "Plataforma editorial moderna con soporte completo para Markdown. Escribe, publica y comparte tus ideas con el mundo.",
-  keywords: ["blog", "markdown", "escritura", "publicación", "artículos"],
+    "Modern editorial platform with full Markdown support. Write, publish and share your ideas with the world.",
+  keywords: ["blog", "markdown", "writing", "publishing", "articles"],
   authors: [{ name: "BlogMD" }],
   openGraph: {
     type: "website",
-    locale: "es_ES",
+    locale: "en_US",
     siteName: "BlogMD",
   },
 };
@@ -39,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-[#f5f5f0] text-[#1a1a2e] transition-colors duration-300`}
       >

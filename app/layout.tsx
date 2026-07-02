@@ -41,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-[#f5f5f0] text-[#1a1a2e] transition-colors duration-300`}
+        className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-[#f5f5f0] dark:bg-[#0d0d1a] text-[#1a1a2e] dark:text-[#e2e8f0] transition-colors duration-300`}
       >
         <Navbar />
         <main className="min-h-screen">{children}</main>

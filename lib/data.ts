@@ -46,5 +46,5 @@ export interface Article {
 
 export const ACCENT_COLOR = "#6c63ff";
 export const ACCENT_LIGHT = "#ede9fe";
-export const DARK_BG = "#1a1a2e";
+export const DARK_BG = "#0d0d1a";
 export const LIGHT_BG = "#f5f5f0";

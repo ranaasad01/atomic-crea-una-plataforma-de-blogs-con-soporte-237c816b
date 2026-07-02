@@ -4,7 +4,14 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: { extend: {} },
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "dark-bg": "#0d0d1a",
+      },
+    },
+  },
   plugins: [],
 };
 export default config;

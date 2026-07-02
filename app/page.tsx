@@ -578,7 +578,12 @@ export default function HomePage() {
         id="categories"
         className="py-16 px-4 bg-white/50"
         data-atomic-id="a1vwqf6a">
-        <div className="max-w-6xl mx-auto" data-atomic-id="a1g24hdv">
+        <div
+          className="max-w-6xl mx-auto"
+          data-atomic-id="a1g24hdv"
+          style={{
+            borderRadius: "24px"
+          }}>
           <motion.div
             variants={staggerContainer}
             initial="hidden"

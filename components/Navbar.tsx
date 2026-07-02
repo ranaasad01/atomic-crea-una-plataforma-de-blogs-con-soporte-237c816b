@@ -83,15 +83,7 @@ export default function Navbar() {
           {/* Desktop nav */}
           <div
             className="hidden md:flex items-center gap-1"
-            data-atomic-id="awzmkjt"
-            style={{
-              color: "#f97316",
-              fontSize: "28px",
-              padding: "40px",
-              margin: "32px",
-              backgroundColor: "#84cc16",
-              borderRadius: "16px"
-            }}>
+            data-atomic-id="awzmkjt">
             {navLinks.map((link) => {
               const isHome = link.href === "/";
               const isActive =

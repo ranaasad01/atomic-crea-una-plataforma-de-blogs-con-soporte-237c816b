@@ -619,7 +619,15 @@ export default function HomePage() {
                   <p
                     className="text-xs font-semibold text-[#1a1a2e] group-hover:text-[#6c63ff] transition-colors"
                     data-atomic-id="a184kjvy"
-                    data-atomic-instance={__atomicIdx}>
+                    data-atomic-instance={__atomicIdx}
+                    style={__atomicIdx === 1 ? {
+                      color: "#d946ef",
+                      backgroundColor: "#3b82f6",
+                      fontSize: "32px",
+                      padding: "32px",
+                      margin: "32px",
+                      borderRadius: "16px"
+                    } : undefined}>
                     {tag.name}
                   </p>
                   <p

@@ -83,7 +83,13 @@ export default function Navbar() {
           {/* Desktop nav */}
           <div
             className="hidden md:flex items-center gap-1"
-            data-atomic-id="awzmkjt">
+            data-atomic-id="awzmkjt"
+            style={{
+              color: "#f97316",
+              fontSize: "32px",
+              padding: "32px",
+              margin: "32px"
+            }}>
             {navLinks.map((link) => {
               const isHome = link.href === "/";
               const isActive =
@@ -114,7 +120,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-3" data-atomic-id="ajjou6s">
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Link
                 href={navCTA.href}
@@ -132,7 +138,7 @@ export default function Navbar() {
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
             className="md:hidden w-9 h-9 flex items-center justify-center rounded-lg text-[#1a1a2e]/70 hover:text-[#1a1a2e] hover:bg-[#1a1a2e]/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6c63ff]"
-          >
+            data-atomic-id="aawbuvl">
             <AnimatePresence mode="wait" initial={false}>
               {isOpen ? (
                 <motion.span
@@ -159,7 +165,6 @@ export default function Navbar() {
           </button>
         </div>
       </nav>
-
       {/* Mobile menu */}
       <AnimatePresence>
         {isOpen && (
@@ -171,7 +176,9 @@ export default function Navbar() {
             transition={{ duration: 0.2 }}
             className="md:hidden bg-[#f0f0f0] border-t border-[#1a1a2e]/10 shadow-lg"
           >
-            <div className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-1">
+            <div
+              className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-1"
+              data-atomic-id="a1mghn2r">
               {navLinks.map((link) => {
                 const isHome = link.href === "/";
                 const isActive = isHome ? pathname === "/" : false;
@@ -191,7 +198,9 @@ export default function Navbar() {
                   </Link>
                 );
               })}
-              <div className="pt-2 mt-1 border-t border-[#1a1a2e]/10">
+              <div
+                className="pt-2 mt-1 border-t border-[#1a1a2e]/10"
+                data-atomic-id="arbgm0o">
                 <Link
                   href={navCTA.href}
                   className="flex items-center justify-center gap-1.5 w-full px-4 py-2.5 rounded-lg bg-[#6c63ff] text-white text-sm font-medium shadow-[0_2px_8px_rgba(108,99,255,0.35)] hover:bg-[#5a52e0] transition-colors"

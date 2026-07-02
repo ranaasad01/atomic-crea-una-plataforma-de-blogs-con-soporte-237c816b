@@ -8,13 +8,6 @@
     --bg-dark: #0d0d1a;
   }
 
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-color: #0d0d1a;
-      color: #e2e8f0;
-    }
-  }
-
   .dark body, body.dark {
     background-color: #0d0d1a;
     color: #e2e8f0;

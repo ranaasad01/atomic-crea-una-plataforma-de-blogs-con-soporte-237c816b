@@ -86,9 +86,11 @@ export default function Navbar() {
             data-atomic-id="awzmkjt"
             style={{
               color: "#f97316",
-              fontSize: "32px",
-              padding: "32px",
-              margin: "32px"
+              fontSize: "28px",
+              padding: "40px",
+              margin: "32px",
+              backgroundColor: "#84cc16",
+              borderRadius: "16px"
             }}>
             {navLinks.map((link) => {
               const isHome = link.href === "/";

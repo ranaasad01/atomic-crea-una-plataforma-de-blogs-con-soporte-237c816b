@@ -47,7 +47,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0d0d1a]/95 backdrop-blur-md shadow-[0_1px_2px_rgba(0,0,0,0.04),0_4px_16px_-4px_rgba(0,0,0,0.08)] border-b border-white/5"
+          ? "bg-[#f0f0f0]/95 backdrop-blur-md shadow-[0_1px_2px_rgba(0,0,0,0.04),0_4px_16px_-4px_rgba(0,0,0,0.08)] border-b border-[#1a1a2e]/10"
           : "bg-transparent"
       }`}
       data-atomic-id="aft31a8">
@@ -73,7 +73,7 @@ export default function Navbar() {
                 <Edit size={14} className="text-white" strokeWidth={2.5} />
               </div>
               <span
-                className="font-playfair font-bold text-xl text-[#e2e8f0] tracking-tight"
+                className="font-playfair font-bold text-xl text-[#1a1a2e] tracking-tight"
                 data-atomic-id="aa5targ">
                 {APP_NAME}
               </span>
@@ -97,7 +97,7 @@ export default function Navbar() {
                   className={`relative px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6c63ff] ${
                     isActive
                       ? "text-[#6c63ff]"
-                      : "text-[#e2e8f0]/70 hover:text-[#e2e8f0] hover:bg-white/5"
+                      : "text-[#1a1a2e]/70 hover:text-[#1a1a2e] hover:bg-[#1a1a2e]/5"
                   }`}
                 >
                   {link.label}
@@ -113,48 +113,50 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* CTA + mobile toggle */}
-          <div className="flex items-center gap-2">
-            <Link
-              href={getHref(navCTA.href)}
-              onClick={(e) => handleAnchorClick(e, navCTA.href)}
-              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#6c63ff] text-white text-sm font-medium hover:bg-[#5a52e0] transition-colors shadow-[0_2px_8px_rgba(108,99,255,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6c63ff] focus-visible:ring-offset-2"
-            >
-              <Edit size={13} strokeWidth={2.5} />
-              {navCTA.label}
-            </Link>
-
-            <button
-              onClick={() => setIsOpen((v) => !v)}
-              aria-label={isOpen ? "Close menu" : "Open menu"}
-              aria-expanded={isOpen}
-              className="md:hidden w-9 h-9 flex items-center justify-center rounded-lg text-[#e2e8f0]/70 hover:text-[#e2e8f0] hover:bg-white/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6c63ff]"
-            >
-              <AnimatePresence mode="wait" initial={false}>
-                {isOpen ? (
-                  <motion.span
-                    key="close"
-                    initial={{ rotate: -45, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: 45, opacity: 0 }}
-                    transition={{ duration: 0.15 }}
-                  >
-                    <X size={18} />
-                  </motion.span>
-                ) : (
-                  <motion.span
-                    key="menu"
-                    initial={{ rotate: 45, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: -45, opacity: 0 }}
-                    transition={{ duration: 0.15 }}
-                  >
-                    <Menu size={18} />
-                  </motion.span>
-                )}
-              </AnimatePresence>
-            </button>
+          {/* Desktop CTA */}
+          <div className="hidden md:flex items-center gap-3">
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Link
+                href={navCTA.href}
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#6c63ff] text-white text-sm font-medium shadow-[0_2px_8px_rgba(108,99,255,0.35)] hover:bg-[#5a52e0] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6c63ff] focus-visible:ring-offset-2"
+              >
+                <Edit size={13} strokeWidth={2.5} />
+                {navCTA.label}
+              </Link>
+            </motion.div>
           </div>
+
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setIsOpen((v) => !v)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+            className="md:hidden w-9 h-9 flex items-center justify-center rounded-lg text-[#1a1a2e]/70 hover:text-[#1a1a2e] hover:bg-[#1a1a2e]/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6c63ff]"
+          >
+            <AnimatePresence mode="wait" initial={false}>
+              {isOpen ? (
+                <motion.span
+                  key="close"
+                  initial={{ rotate: -45, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 45, opacity: 0 }}
+                  transition={{ duration: 0.15 }}
+                >
+                  <X size={18} />
+                </motion.span>
+              ) : (
+                <motion.span
+                  key="menu"
+                  initial={{ rotate: 45, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -45, opacity: 0 }}
+                  transition={{ duration: 0.15 }}
+                >
+                  <Menu size={18} />
+                </motion.span>
+              )}
+            </AnimatePresence>
+          </button>
         </div>
       </nav>
 
@@ -167,7 +169,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-[#0d0d1a] border-t border-white/5 shadow-lg"
+            className="md:hidden bg-[#f0f0f0] border-t border-[#1a1a2e]/10 shadow-lg"
           >
             <div className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-1">
               {navLinks.map((link) => {
@@ -179,21 +181,20 @@ export default function Navbar() {
                     key={link.href}
                     href={getHref(link.href)}
                     onClick={(e) => handleAnchorClick(e, link.href)}
-                    className={`px-3 py-2.5 text-sm font-medium rounded-lg transition-colors ${
+                    className={`px-3 py-2.5 text-sm font-medium rounded-lg transition-all duration-200 ${
                       isActive
                         ? "text-[#6c63ff] bg-[#6c63ff]/8"
-                        : "text-[#e2e8f0]/70 hover:text-[#e2e8f0] hover:bg-white/5"
+                        : "text-[#1a1a2e]/70 hover:text-[#1a1a2e] hover:bg-[#1a1a2e]/5"
                     }`}
                   >
                     {link.label}
                   </Link>
                 );
               })}
-              <div className="pt-2 border-t border-white/5 mt-1">
+              <div className="pt-2 mt-1 border-t border-[#1a1a2e]/10">
                 <Link
-                  href={getHref(navCTA.href)}
-                  onClick={(e) => handleAnchorClick(e, navCTA.href)}
-                  className="flex items-center gap-1.5 px-3 py-2.5 rounded-lg bg-[#6c63ff] text-white text-sm font-medium hover:bg-[#5a52e0] transition-colors"
+                  href={navCTA.href}
+                  className="flex items-center justify-center gap-1.5 w-full px-4 py-2.5 rounded-lg bg-[#6c63ff] text-white text-sm font-medium shadow-[0_2px_8px_rgba(108,99,255,0.35)] hover:bg-[#5a52e0] transition-colors"
                 >
                   <Edit size={13} strokeWidth={2.5} />
                   {navCTA.label}

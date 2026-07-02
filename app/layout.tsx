@@ -18,6 +18,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  formatDetection: { telephone: false, date: false, email: false, address: false },
   title: {
     default: "BlogMD — Write with clarity",
     template: "%s | BlogMD",
@@ -39,9 +40,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-[#0d0d1a] text-[#e2e8f0] transition-colors duration-300`}
+        className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-[#f0f0f0] text-[#1a1a2e] transition-colors duration-300`}
       >
         <Navbar />
         <main className="min-h-screen">{children}</main>

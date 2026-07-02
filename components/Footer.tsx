@@ -52,7 +52,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-[#1a1a2e] text-white/80">
+    <footer className="bg-[#e2e2e2] text-[#1a1a2e]/80">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top section */}
         <motion.div
@@ -71,14 +71,14 @@ export default function Footer() {
               <div className="w-8 h-8 rounded-lg bg-[#6c63ff] flex items-center justify-center shadow-[0_2px_8px_rgba(108,99,255,0.4)]">
                 <Edit size={14} className="text-white" strokeWidth={2.5} />
               </div>
-              <span className="font-playfair font-bold text-xl text-white tracking-tight">
+              <span className="font-playfair font-bold text-xl text-[#1a1a2e] tracking-tight">
                 {APP_NAME}
               </span>
             </Link>
-            <p className="text-sm text-white/55 leading-relaxed max-w-xs">
+            <p className="text-sm text-[#1a1a2e]/55 leading-relaxed max-w-xs">
               {APP_TAGLINE}
             </p>
-            <p className="mt-3 text-sm text-white/40 leading-relaxed max-w-xs">
+            <p className="mt-3 text-sm text-[#1a1a2e]/40 leading-relaxed max-w-xs">
               An editorial platform for writers who value clarity and great design.
             </p>
 
@@ -91,7 +91,7 @@ export default function Footer() {
                   aria-label={label}
                   whileHover={{ scale: 1.1, y: -1 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6c63ff]"
+                  className="w-9 h-9 rounded-lg bg-[#1a1a2e]/5 border border-[#1a1a2e]/10 flex items-center justify-center text-[#1a1a2e]/50 hover:text-[#1a1a2e] hover:bg-[#1a1a2e]/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6c63ff]"
                 >
                   <Icon size={15} />
                 </motion.a>
@@ -102,7 +102,7 @@ export default function Footer() {
           {/* Nav sections */}
           {footerSections.map((section) => (
             <motion.div key={section.title} variants={fadeInUp}>
-              <h3 className="text-xs font-semibold uppercase tracking-widest text-white/30 mb-4">
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-[#1a1a2e]/30 mb-4">
                 {section.title}
               </h3>
               <ul className="space-y-2.5">
@@ -111,7 +111,7 @@ export default function Footer() {
                     <Link
                       href={getHref(link.href)}
                       onClick={(e) => handleAnchorClick(e, link.href)}
-                      className="text-sm text-white/50 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6c63ff] rounded"
+                      className="text-sm text-[#1a1a2e]/60 hover:text-[#1a1a2e] transition-colors duration-200"
                     >
                       {link.label}
                     </Link>
@@ -123,12 +123,12 @@ export default function Footer() {
         </motion.div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-white/30">
+        <div className="border-t border-[#1a1a2e]/10 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-[#1a1a2e]/40">
             &copy; {new Date().getFullYear()} {APP_NAME}. All rights reserved.
           </p>
-          <p className="text-xs text-white/20">
-            Built with Next.js &amp; Markdown
+          <p className="text-xs text-[#1a1a2e]/30">
+            Built with Next.js &amp; Tailwind CSS
           </p>
         </div>
       </div>

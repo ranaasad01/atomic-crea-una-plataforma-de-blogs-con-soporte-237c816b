@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import {
@@ -141,7 +141,7 @@ function TagBadge({ tag, small }: { tag: Tag; small?: boolean }) {
         color: tag.color,
         border: `1px solid ${tag.color}30`,
       }}
-    >
+      data-atomic-id="af6v9x2">
       {tag.name}
     </span>
   );
@@ -154,40 +154,57 @@ function ArticleCard({ article, index }: { article: Article; index: number }) {
       className="group bg-white rounded-2xl overflow-hidden border border-black/5 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-1 flex flex-col"
     >
       {/* Cover */}
-      <div className="relative h-44 bg-gradient-to-br from-[#e2e8f0] to-[#c7d2fe] overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center">
+      <div
+        className="relative h-44 bg-gradient-to-br from-[#e2e8f0] to-[#c7d2fe] overflow-hidden"
+        data-atomic-id="a1izxydp">
+        <div
+          className="absolute inset-0 flex items-center justify-center"
+          data-atomic-id="ab3e5bk">
           <FileText size={40} className="text-[#6c63ff]/20" />
         </div>
-        <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
+        <div
+          className="absolute top-3 left-3 flex flex-wrap gap-1.5"
+          data-atomic-id="ab4szg2">
           {article.tags.slice(0, 2).map((tag) => (
             <TagBadge key={tag.id} tag={tag} small />
           ))}
         </div>
       </div>
-
       {/* Body */}
-      <div className="p-5 flex flex-col flex-1">
-        <h3 className="font-playfair font-bold text-[#1a1a2e] text-lg leading-snug mb-2 group-hover:text-[#6c63ff] transition-colors line-clamp-2">
+      <div className="p-5 flex flex-col flex-1" data-atomic-id="a1j2rmmp">
+        <h3
+          className="font-playfair font-bold text-[#1a1a2e] text-lg leading-snug mb-2 group-hover:text-[#6c63ff] transition-colors line-clamp-2"
+          data-atomic-id="ahysf0s">
           {article.title}
         </h3>
-        <p className="text-sm text-[#1a1a2e]/60 leading-relaxed mb-4 line-clamp-3 flex-1">
+        <p
+          className="text-sm text-[#1a1a2e]/60 leading-relaxed mb-4 line-clamp-3 flex-1"
+          data-atomic-id="a114wg8z">
           {article.excerpt}
         </p>
 
         {/* Meta */}
-        <div className="flex items-center justify-between pt-3 border-t border-black/5">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#6c63ff] to-[#a78bfa] flex items-center justify-center text-white text-[10px] font-bold">
+        <div
+          className="flex items-center justify-between pt-3 border-t border-black/5"
+          data-atomic-id="aordse2">
+          <div className="flex items-center gap-2" data-atomic-id="a1mhsb25">
+            <div
+              className="w-6 h-6 rounded-full bg-gradient-to-br from-[#6c63ff] to-[#a78bfa] flex items-center justify-center text-white text-[10px] font-bold"
+              data-atomic-id="asht7hc">
               {article.author[0]}
             </div>
-            <span className="text-xs text-[#1a1a2e]/50 font-medium">{article.author}</span>
+            <span
+              className="text-xs text-[#1a1a2e]/50 font-medium"
+              data-atomic-id="ai88gpd">{article.author}</span>
           </div>
-          <div className="flex items-center gap-3 text-[#1a1a2e]/40">
-            <span className="flex items-center gap-1 text-xs">
+          <div
+            className="flex items-center gap-3 text-[#1a1a2e]/40"
+            data-atomic-id="a1mj756n">
+            <span className="flex items-center gap-1 text-xs" data-atomic-id="are8c41">
               <Clock size={11} />
               {article.readingTime}m
             </span>
-            <span className="flex items-center gap-1 text-xs">
+            <span className="flex items-center gap-1 text-xs" data-atomic-id="asoty8j">
               <Eye size={11} />
               {article.views.toLocaleString()}
             </span>
@@ -205,48 +222,75 @@ function FeaturedCard({ article }: { article: Article }) {
       className="group relative bg-white rounded-2xl overflow-hidden border border-black/5 shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-1"
     >
       {/* Cover */}
-      <div className="relative h-56 bg-gradient-to-br from-[#1a1a2e] via-[#2d2b55] to-[#6c63ff] overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center opacity-10">
+      <div
+        className="relative h-56 bg-gradient-to-br from-[#1a1a2e] via-[#2d2b55] to-[#6c63ff] overflow-hidden"
+        data-atomic-id="awobavi">
+        <div
+          className="absolute inset-0 flex items-center justify-center opacity-10"
+          data-atomic-id="a1x8iiq9">
           <FileText size={80} className="text-white" />
         </div>
-        <div className="absolute top-4 left-4">
-          <span className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-[#6c63ff] text-white shadow">
+        <div className="absolute top-4 left-4" data-atomic-id="a1x9xcur">
+          <span
+            className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-[#6c63ff] text-white shadow"
+            data-atomic-id="a6osa79">
             <Star size={10} fill="currentColor" /> Featured
           </span>
         </div>
-        <div className="absolute bottom-4 left-4 flex flex-wrap gap-1.5">
+        <div
+          className="absolute bottom-4 left-4 flex flex-wrap gap-1.5"
+          data-atomic-id="a1xbc6z9">
           {article.tags.map((tag) => (
             <TagBadge key={tag.id} tag={tag} small />
           ))}
         </div>
       </div>
-
       {/* Body */}
-      <div className="p-6">
-        <h3 className="font-playfair font-bold text-[#1a1a2e] text-xl leading-snug mb-2 group-hover:text-[#6c63ff] transition-colors">
+      <div className="p-6" data-atomic-id="awr4z4i">
+        <h3
+          className="font-playfair font-bold text-[#1a1a2e] text-xl leading-snug mb-2 group-hover:text-[#6c63ff] transition-colors"
+          data-atomic-id="a1x8g3pp">
           {article.title}
         </h3>
-        <p className="text-sm text-[#1a1a2e]/60 leading-relaxed mb-5 line-clamp-3">
+        <p
+          className="text-sm text-[#1a1a2e]/60 leading-relaxed mb-5 line-clamp-3"
+          data-atomic-id="a1yz5k2s">
           {article.excerpt}
         </p>
 
         {/* Meta */}
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#6c63ff] to-[#a78bfa] flex items-center justify-center text-white text-xs font-bold">
+        <div className="flex items-center justify-between" data-atomic-id="abve3tn">
+          <div className="flex items-center gap-2" data-atomic-id="a1thx1ku">
+            <div
+              className="w-7 h-7 rounded-full bg-gradient-to-br from-[#6c63ff] to-[#a78bfa] flex items-center justify-center text-white text-xs font-bold"
+              data-atomic-id="a1gup6td">
               {article.author[0]}
             </div>
-            <div>
-              <p className="text-xs font-semibold text-[#1a1a2e]">{article.author}</p>
-              <p className="text-[10px] text-[#1a1a2e]/40">{article.publishedAt}</p>
+            <div data-atomic-id="a1gw40xv">
+              <p
+                className="text-xs font-semibold text-[#1a1a2e]"
+                data-atomic-id="a1t85gfn">{article.author}</p>
+              <p className="text-[10px] text-[#1a1a2e]/40" data-atomic-id="a1t85i45">{article.publishedAt}</p>
             </div>
           </div>
-          <div className="flex items-center gap-3 text-[#1a1a2e]/40">
-            <span className="flex items-center gap-1 text-xs">
+          <div
+            className="flex items-center gap-3 text-[#1a1a2e]/40"
+            data-atomic-id="a1tjbvpc">
+            <span
+              className="flex items-center gap-1 text-xs"
+              data-atomic-id="a1dvb4eq"
+              style={{
+                color: "#84cc16",
+                backgroundColor: "#000000",
+                fontSize: "48px",
+                padding: "24px",
+                margin: "24px",
+                borderRadius: "8px"
+              }}>
               <Clock size={12} />
               {article.readingTime} min read
             </span>
-            <span className="flex items-center gap-1 text-xs">
+            <span className="flex items-center gap-1 text-xs" data-atomic-id="a1f5wqj8">
               <Eye size={12} />
               {article.views.toLocaleString()}
             </span>
@@ -297,17 +341,24 @@ export default function HomePage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f5f5f0]">
-
+    <div className="min-h-screen bg-[#f5f5f0]" data-atomic-id="adkzv3c">
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
-      <section className="relative pt-32 pb-24 px-4 overflow-hidden">
+      <section
+        className="relative pt-32 pb-24 px-4 overflow-hidden"
+        data-atomic-id="a13m40vz">
         {/* Background decoration */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#6c63ff]/5 blur-3xl translate-x-1/3 -translate-y-1/3" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-[#6c63ff]/4 blur-3xl -translate-x-1/3 translate-y-1/3" />
+        <div className="absolute inset-0 pointer-events-none" data-atomic-id="akjdymq">
+          <div
+            className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#6c63ff]/5 blur-3xl translate-x-1/3 -translate-y-1/3"
+            data-atomic-id="a851v2t" />
+          <div
+            className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-[#6c63ff]/4 blur-3xl -translate-x-1/3 translate-y-1/3"
+            data-atomic-id="a86gp7b" />
         </div>
 
-        <div className="max-w-4xl mx-auto text-center relative">
+        <div
+          className="max-w-4xl mx-auto text-center relative"
+          data-atomic-id="akkssr8">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -315,7 +366,9 @@ export default function HomePage() {
             className="space-y-6"
           >
             <motion.div variants={fadeInUp}>
-              <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#6c63ff] bg-[#6c63ff]/8 border border-[#6c63ff]/20 px-4 py-2 rounded-full">
+              <span
+                className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#6c63ff] bg-[#6c63ff]/8 border border-[#6c63ff]/20 px-4 py-2 rounded-full"
+                data-atomic-id="asf3xu4">
                 <Sparkles size={12} />
                 Editorial platform · Markdown-powered
               </span>
@@ -326,8 +379,8 @@ export default function HomePage() {
               className="font-playfair font-bold text-5xl sm:text-6xl lg:text-7xl text-[#1a1a2e] leading-[1.1] tracking-tight"
             >
               Write with{" "}
-              <span className="relative">
-                <span className="text-[#6c63ff]">clarity</span>
+              <span className="relative" data-atomic-id="a146b1hs">
+                <span className="text-[#6c63ff]" data-atomic-id="a11i1oib">clarity</span>
                 <motion.span
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
@@ -336,7 +389,7 @@ export default function HomePage() {
                 />
               </span>
               {"."}  Publish with{" "}
-              <span className="text-[#6c63ff]">style</span>.
+              <span className="text-[#6c63ff]" data-atomic-id="a1823vva">style</span>.
             </motion.h1>
 
             <motion.p
@@ -357,7 +410,7 @@ export default function HomePage() {
                   document.querySelector("#editor")?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#6c63ff] text-white font-semibold text-sm shadow-[0_4px_16px_rgba(108,99,255,0.35)] hover:bg-[#5b52e8] hover:shadow-[0_6px_24px_rgba(108,99,255,0.45)] transition-all duration-200 active:scale-95"
-              >
+                data-atomic-id="acq0l1d">
                 <Edit size={15} />
                 Start writing
               </a>
@@ -368,7 +421,7 @@ export default function HomePage() {
                   document.querySelector("#articles")?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-[#1a1a2e] font-semibold text-sm border border-black/8 shadow-[0_2px_8px_rgba(0,0,0,0.06)] hover:bg-[#f0f0ea] hover:shadow-[0_4px_16px_rgba(0,0,0,0.10)] transition-all duration-200 active:scale-95"
-              >
+                data-atomic-id="acq0mpv">
                 Browse articles
                 <ArrowRight size={15} />
               </a>
@@ -386,19 +439,30 @@ export default function HomePage() {
               { value: "6", label: "Articles" },
               { value: "6", label: "Topics" },
               { value: "∞", label: "Ideas" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p className="font-playfair font-bold text-3xl text-[#1a1a2e]">{stat.value}</p>
-                <p className="text-xs text-[#1a1a2e]/40 mt-0.5">{stat.label}</p>
-              </div>
-            ))}
+            ].map((stat, __atomicIdx) => (<div
+              key={stat.label}
+              className="text-center"
+              data-atomic-id="a1y5klex"
+              data-atomic-instance={__atomicIdx}>
+              <p
+                className="font-playfair font-bold text-3xl text-[#1a1a2e]"
+                data-atomic-id="aoe3yzd"
+                data-atomic-instance={__atomicIdx}
+                style={__atomicIdx === 0 ? {
+                  fontSize: "28px",
+                  color: "#f59e0b"
+                } : undefined}>{stat.value}</p>
+              <p
+                className="text-xs text-[#1a1a2e]/40 mt-0.5"
+                data-atomic-id="aoe40nv"
+                data-atomic-instance={__atomicIdx}>{stat.label}</p>
+            </div>))}
           </motion.div>
         </div>
       </section>
-
       {/* ── Featured Articles ─────────────────────────────────────────────── */}
-      <section className="py-16 px-4 bg-white/50">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-16 px-4 bg-white/50" data-atomic-id="aqu2phf">
+        <div className="max-w-6xl mx-auto" data-atomic-id="ay1q978">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -407,10 +471,14 @@ export default function HomePage() {
           >
             <motion.div variants={fadeInUp} className="flex items-center gap-3 mb-8">
               <Star size={18} className="text-[#6c63ff]" fill="#6c63ff" />
-              <h2 className="font-playfair font-bold text-2xl text-[#1a1a2e]">Featured Articles</h2>
+              <h2
+                className="font-playfair font-bold text-2xl text-[#1a1a2e]"
+                data-atomic-id="a17p7pfa">Featured Articles</h2>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div
+              className="grid grid-cols-1 md:grid-cols-2 gap-6"
+              data-atomic-id="a1qiwhj0">
               {featuredArticles.map((article) => (
                 <FeaturedCard key={article.id} article={article} />
               ))}
@@ -418,10 +486,13 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* ── Articles ──────────────────────────────────────────────────────── */}
-      <section id="articles" ref={articlesRef} className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
+      <section
+        id="articles"
+        ref={articlesRef}
+        className="py-16 px-4"
+        data-atomic-id="a9nnolq">
+        <div className="max-w-6xl mx-auto" data-atomic-id="a12idcov">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -430,8 +501,10 @@ export default function HomePage() {
           >
             {/* Header + Search */}
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-              <h2 className="font-playfair font-bold text-2xl text-[#1a1a2e]">All Articles</h2>
-              <div className="relative">
+              <h2
+                className="font-playfair font-bold text-2xl text-[#1a1a2e]"
+                data-atomic-id="a1u5wf4x">All Articles</h2>
+              <div className="relative" data-atomic-id="a1gir0i4">
                 <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#1a1a2e]/30" />
                 <input
                   type="text"
@@ -439,7 +512,7 @@ export default function HomePage() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="pl-9 pr-4 py-2 text-sm rounded-xl border border-black/8 bg-white shadow-[0_2px_8px_rgba(0,0,0,0.04)] focus:outline-none focus:ring-2 focus:ring-[#6c63ff]/30 focus:border-[#6c63ff]/40 w-64 placeholder:text-[#1a1a2e]/30"
-                />
+                  data-atomic-id="aqgez7i" />
               </div>
             </motion.div>
 
@@ -452,28 +525,30 @@ export default function HomePage() {
                     ? "bg-[#6c63ff] text-white border-[#6c63ff] shadow-[0_2px_8px_rgba(108,99,255,0.3)]"
                     : "bg-white text-[#1a1a2e]/60 border-black/8 hover:border-[#6c63ff]/30 hover:text-[#6c63ff]"
                 }`}
-              >
+                data-atomic-id="a1evryf">
                 All
               </button>
-              {TAGS.map((tag) => (
-                <button
-                  key={tag.id}
-                  onClick={() => setActiveTag(activeTag === tag.slug ? null : tag.slug)}
-                  className={`text-xs font-medium px-3 py-1.5 rounded-full border transition-all duration-150 ${
-                    activeTag === tag.slug
-                      ? "text-white border-transparent shadow-[0_2px_8px_rgba(0,0,0,0.15)]"
-                      : "bg-white text-[#1a1a2e]/60 border-black/8 hover:border-current"
-                  }`}
-                  style={
-                    activeTag === tag.slug
-                      ? { backgroundColor: tag.color }
-                      : { color: tag.color }
-                  }
-                >
-                  {tag.name}
-                  <span className="ml-1 opacity-60">({tag.count})</span>
-                </button>
-              ))}
+              {TAGS.map((tag, __atomicIdx) => (<button
+                key={tag.id}
+                onClick={() => setActiveTag(activeTag === tag.slug ? null : tag.slug)}
+                className={`text-xs font-medium px-3 py-1.5 rounded-full border transition-all duration-150 ${
+                  activeTag === tag.slug
+                    ? "text-white border-transparent shadow-[0_2px_8px_rgba(0,0,0,0.15)]"
+                    : "bg-white text-[#1a1a2e]/60 border-black/8 hover:border-current"
+                }`}
+                style={
+                  activeTag === tag.slug
+                    ? { backgroundColor: tag.color }
+                    : { color: tag.color }
+                }
+                data-atomic-id="awbql78"
+                data-atomic-instance={__atomicIdx}>
+                {tag.name}
+                <span
+                  className="ml-1 opacity-60"
+                  data-atomic-id="a3c9g5r"
+                  data-atomic-instance={__atomicIdx}>({tag.count})</span>
+              </button>))}
             </motion.div>
 
             {/* Grid */}
@@ -492,16 +567,18 @@ export default function HomePage() {
             ) : (
               <motion.div variants={fadeIn} className="text-center py-16">
                 <FileText size={40} className="text-[#1a1a2e]/15 mx-auto mb-3" />
-                <p className="text-[#1a1a2e]/40 text-sm">No articles found. Try a different search or tag.</p>
+                <p className="text-[#1a1a2e]/40 text-sm" data-atomic-id="a1hlew8m">No articles found. Try a different search or tag.</p>
               </motion.div>
             )}
           </motion.div>
         </div>
       </section>
-
       {/* ── Categories ────────────────────────────────────────────────────── */}
-      <section id="categories" className="py-16 px-4 bg-white/50">
-        <div className="max-w-6xl mx-auto">
+      <section
+        id="categories"
+        className="py-16 px-4 bg-white/50"
+        data-atomic-id="a1vwqf6a">
+        <div className="max-w-6xl mx-auto" data-atomic-id="a1g24hdv">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -515,42 +592,49 @@ export default function HomePage() {
               variants={staggerContainer}
               className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4"
             >
-              {TAGS.map((tag) => (
-                <motion.button
-                  key={tag.id}
-                  variants={scaleIn}
-                  onClick={() => {
-                    setActiveTag(activeTag === tag.slug ? null : tag.slug);
-                    articlesRef.current?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className="group flex flex-col items-center gap-3 p-5 rounded-2xl bg-white border border-black/5 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.10)] transition-all duration-200 hover:-translate-y-1"
-                  style={{
-                    borderColor: activeTag === tag.slug ? tag.color + "60" : undefined,
-                    backgroundColor: activeTag === tag.slug ? tag.color + "08" : undefined,
-                  }}
-                >
-                  <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center text-lg font-bold"
-                    style={{ backgroundColor: tag.color + "18", color: tag.color }}
-                  >
-                    {tag.name[0]}
-                  </div>
-                  <div className="text-center">
-                    <p className="text-xs font-semibold text-[#1a1a2e] group-hover:text-[#6c63ff] transition-colors">
-                      {tag.name}
-                    </p>
-                    <p className="text-[10px] text-[#1a1a2e]/40 mt-0.5">{tag.count} articles</p>
-                  </div>
-                </motion.button>
-              ))}
+              {TAGS.map((tag, __atomicIdx) => (<motion.button
+                key={tag.id}
+                variants={scaleIn}
+                onClick={() => {
+                  setActiveTag(activeTag === tag.slug ? null : tag.slug);
+                  articlesRef.current?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="group flex flex-col items-center gap-3 p-5 rounded-2xl bg-white border border-black/5 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.10)] transition-all duration-200 hover:-translate-y-1"
+                style={{
+                  borderColor: activeTag === tag.slug ? tag.color + "60" : undefined,
+                  backgroundColor: activeTag === tag.slug ? tag.color + "08" : undefined,
+                }}
+              >
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center text-lg font-bold"
+                  style={{ backgroundColor: tag.color + "18", color: tag.color }}
+                  data-atomic-id="a17tp7z0"
+                  data-atomic-instance={__atomicIdx}>
+                  {tag.name[0]}
+                </div>
+                <div
+                  className="text-center"
+                  data-atomic-id="a17v423i"
+                  data-atomic-instance={__atomicIdx}>
+                  <p
+                    className="text-xs font-semibold text-[#1a1a2e] group-hover:text-[#6c63ff] transition-colors"
+                    data-atomic-id="a184kjvy"
+                    data-atomic-instance={__atomicIdx}>
+                    {tag.name}
+                  </p>
+                  <p
+                    className="text-[10px] text-[#1a1a2e]/40 mt-0.5"
+                    data-atomic-id="a184klkg"
+                    data-atomic-instance={__atomicIdx}>{tag.count} articles</p>
+                </div>
+              </motion.button>))}
             </motion.div>
           </motion.div>
         </div>
       </section>
-
       {/* ── Editor ────────────────────────────────────────────────────────── */}
-      <section id="editor" className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
+      <section id="editor" className="py-16 px-4" data-atomic-id="a1j4p3rq">
+        <div className="max-w-6xl mx-auto" data-atomic-id="a1tlvm2v">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -558,10 +642,14 @@ export default function HomePage() {
             viewport={{ once: true, margin: "-60px" }}
           >
             <motion.div variants={fadeInUp} className="text-center mb-10">
-              <h2 className="font-playfair font-bold text-3xl text-[#1a1a2e] mb-3">
+              <h2
+                className="font-playfair font-bold text-3xl text-[#1a1a2e] mb-3"
+                data-atomic-id="aeiars7">
                 Try the Markdown Editor
               </h2>
-              <p className="text-[#1a1a2e]/55 text-sm max-w-lg mx-auto">
+              <p
+                className="text-[#1a1a2e]/55 text-sm max-w-lg mx-auto"
+                data-atomic-id="ayvn2e7">
                 Write in Markdown and see your content rendered in real time. Supports headings, lists, code blocks, and more.
               </p>
             </motion.div>
@@ -571,13 +659,23 @@ export default function HomePage() {
               className="bg-white rounded-2xl border border-black/5 shadow-[0_8px_40px_rgba(0,0,0,0.08)] overflow-hidden"
             >
               {/* Toolbar */}
-              <div className="flex items-center justify-between px-5 py-3 border-b border-black/5 bg-[#f5f5f0]/60">
-                <div className="flex items-center gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-[#ef4444]/60" />
-                  <div className="w-3 h-3 rounded-full bg-[#f59e0b]/60" />
-                  <div className="w-3 h-3 rounded-full bg-[#10b981]/60" />
+              <div
+                className="flex items-center justify-between px-5 py-3 border-b border-black/5 bg-[#f5f5f0]/60"
+                data-atomic-id="a1nehhlg">
+                <div className="flex items-center gap-1.5" data-atomic-id="a4mhtef">
+                  <div
+                    className="w-3 h-3 rounded-full bg-[#ef4444]/60"
+                    data-atomic-id="a1wpyiuy" />
+                  <div
+                    className="w-3 h-3 rounded-full bg-[#f59e0b]/60"
+                    data-atomic-id="a1wrdczg" />
+                  <div
+                    className="w-3 h-3 rounded-full bg-[#10b981]/60"
+                    data-atomic-id="a1wss73y" />
                 </div>
-                <div className="flex items-center gap-1 bg-black/5 rounded-lg p-0.5">
+                <div
+                  className="flex items-center gap-1 bg-black/5 rounded-lg p-0.5"
+                  data-atomic-id="a4nwnix">
                   <button
                     onClick={() => setActiveSection("write")}
                     className={`text-xs font-medium px-3 py-1.5 rounded-md transition-all ${
@@ -585,7 +683,7 @@ export default function HomePage() {
                         ? "bg-white text-[#1a1a2e] shadow-sm"
                         : "text-[#1a1a2e]/50 hover:text-[#1a1a2e]"
                     }`}
-                  >
+                    data-atomic-id="a1h2831x">
                     Write
                   </button>
                   <button
@@ -595,33 +693,39 @@ export default function HomePage() {
                         ? "bg-white text-[#1a1a2e] shadow-sm"
                         : "text-[#1a1a2e]/50 hover:text-[#1a1a2e]"
                     }`}
-                  >
+                    data-atomic-id="a163t9o7">
                     Preview
                   </button>
                 </div>
-                <span className="text-[10px] text-[#1a1a2e]/30 font-mono">
+                <span
+                  className="text-[10px] text-[#1a1a2e]/30 font-mono"
+                  data-atomic-id="ad5mrvu">
                   {editorContent.length} chars
                 </span>
               </div>
 
               {/* Editor / Preview */}
-              <div className="grid grid-cols-1 md:grid-cols-2 min-h-[360px]">
+              <div
+                className="grid grid-cols-1 md:grid-cols-2 min-h-[360px]"
+                data-atomic-id="a1nhb5ug">
                 {/* Write pane */}
-                <div className={`${activeSection === "preview" ? "hidden md:block" : ""} border-r border-black/5`}>
+                <div
+                  className={`${activeSection === "preview" ? "hidden md:block" : ""} border-r border-black/5`}
+                  data-atomic-id="ai7ns7x">
                   <textarea
                     value={editorContent}
                     onChange={(e) => setEditorContent(e.target.value)}
                     className="w-full h-full min-h-[360px] p-6 text-sm font-mono text-[#1a1a2e]/80 bg-transparent resize-none focus:outline-none leading-relaxed placeholder:text-[#1a1a2e]/20"
                     placeholder="Start writing in Markdown…"
                     spellCheck={false}
-                  />
+                    data-atomic-id="a1u2hjmj" />
                 </div>
 
                 {/* Preview pane */}
                 <div
                   className={`${activeSection === "write" ? "hidden md:block" : ""} p-6 overflow-y-auto prose prose-sm max-w-none`}
                   dangerouslySetInnerHTML={{ __html: renderMarkdown(editorContent) }}
-                />
+                  data-atomic-id="aiahggx" />
               </div>
             </motion.div>
 
@@ -651,13 +755,19 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* ── About ─────────────────────────────────────────────────────────── */}
-      <section id="about" className="py-20 px-4 bg-[#1a1a2e] text-white overflow-hidden relative">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#6c63ff]/10 blur-3xl translate-x-1/3 -translate-y-1/3" />
+      <section
+        id="about"
+        className="py-20 px-4 bg-[#1a1a2e] text-white overflow-hidden relative"
+        data-atomic-id="a4e08s1">
+        <div className="absolute inset-0 pointer-events-none" data-atomic-id="aezzmte">
+          <div
+            className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#6c63ff]/10 blur-3xl translate-x-1/3 -translate-y-1/3"
+            data-atomic-id="andits5" />
         </div>
-        <div className="max-w-4xl mx-auto text-center relative">
+        <div
+          className="max-w-4xl mx-auto text-center relative"
+          data-atomic-id="af1egxw">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -666,14 +776,16 @@ export default function HomePage() {
             className="space-y-6"
           >
             <motion.div variants={fadeInUp}>
-              <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#6c63ff] bg-[#6c63ff]/10 border border-[#6c63ff]/20 px-4 py-2 rounded-full">
+              <span
+                className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#6c63ff] bg-[#6c63ff]/10 border border-[#6c63ff]/20 px-4 py-2 rounded-full"
+                data-atomic-id="a1ge2abg">
                 About BlogMD
               </span>
             </motion.div>
 
             <motion.h2 variants={fadeInUp} className="font-playfair font-bold text-4xl sm:text-5xl text-white leading-tight">
               Built for writers who{" "}
-              <span className="text-[#6c63ff]">care about craft</span>
+              <span className="text-[#6c63ff]" data-atomic-id="a1s59dz4">care about craft</span>
             </motion.h2>
 
             <motion.p variants={fadeInUp} className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto">
@@ -697,23 +809,30 @@ export default function HomePage() {
                   title: "Made with care",
                   desc: "Crafted with attention to detail for writers who value quality and clarity.",
                 },
-              ].map(({ icon: Icon, title, desc }) => (
+              ].map(({ icon: Icon, title, desc }, __atomicIdx) => (<div
+                key={title}
+                className="bg-white/5 border border-white/10 rounded-2xl p-6 text-left hover:bg-white/8 transition-colors"
+                data-atomic-id="a1acr61q"
+                data-atomic-instance={__atomicIdx}>
                 <div
-                  key={title}
-                  className="bg-white/5 border border-white/10 rounded-2xl p-6 text-left hover:bg-white/8 transition-colors"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-[#6c63ff]/20 flex items-center justify-center mb-4">
-                    <Icon size={18} className="text-[#6c63ff]" />
-                  </div>
-                  <h3 className="font-semibold text-white mb-2">{title}</h3>
-                  <p className="text-white/50 text-sm leading-relaxed">{desc}</p>
+                  className="w-10 h-10 rounded-xl bg-[#6c63ff]/20 flex items-center justify-center mb-4"
+                  data-atomic-id="a1idizfl"
+                  data-atomic-instance={__atomicIdx}>
+                  <Icon size={18} className="text-[#6c63ff]" />
                 </div>
-              ))}
+                <h3
+                  className="font-semibold text-white mb-2"
+                  data-atomic-id="a1wdhxcr"
+                  data-atomic-instance={__atomicIdx}>{title}</h3>
+                <p
+                  className="text-white/50 text-sm leading-relaxed"
+                  data-atomic-id="alfziia"
+                  data-atomic-instance={__atomicIdx}>{desc}</p>
+              </div>))}
             </motion.div>
           </motion.div>
         </div>
       </section>
-
     </div>
   );
 }
